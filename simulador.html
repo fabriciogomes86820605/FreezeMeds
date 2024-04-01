@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simuluador</title>
+</head>
+
+<body>
+
+    <h1> <i> Simulador Financeiro </i> </h1> <br>
+
+    <p>Nome do Medicamento:</p>
+    <input type="text" id="input_nomeMd">
+
+    <p>Temperatura Ideal do Medicamento:</p>
+    <input type="text" id="input_idealMd">
+
+    <p>Temperatura Atual da Máquina:</p>
+    <input id="input_tempAT" type="text"> <br>
+
+    <p>Quantidade de medicamentos no freezer - (unidade): </p>
+    <input id="input_qtdMED" type="text"> <br>
+
+    <p>Custo do medicamento:</p>
+    <input id="input_custoMED" type="text"> <br> <br>
+
+    <button onclick="calc()"> Calcular prejuízo </button> <br> <br> <br>
+
+    <div>
+        <h2>Resultado:</h2>
+        <p id="divResul"></p>
+        <p id="divMsg"></p>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // Declaramos as variaveis globais
+    var tempAT = 0;
+    var qtdMED = 0;
+    var custoMED = 0;
+    var tempIdeal = 0;
+
+    function calc() {
+        var nomeMd = input_nomeMd.value;
+
+        // Estamos chamando os valores inseridos em cada input
+        tempAT = Number(input_tempAT.value);
+        qtdMED = Number(input_qtdMED.value);
+        custoMED = Number(input_custoMED.value);
+        tempIdeal = Number(input_idealMd.value);
+        
+        // Calcular o valor total dos medicamentos e a porcentagem
+        var diferencaTemp = tempAT - tempIdeal;
+        var porcentagem = (diferencaTemp / tempIdeal) * 100;
+        var valorTotal = qtdMED * custoMED;
+
+        // Mensagem de resumo de todos os dados fornecidos
+        divResul.innerHTML = `
+        Nome do medicamento: ${nomeMd} <br>
+        Temperatura Ideal: ${tempIdeal} <br>
+        Temperatura do Freezer: ${tempAT} <br>
+        Quantidade de Medicamento no freezer: ${qtdMED} <br>
+        Valor do Medicamento: ${custoMED} <br>
+        `;
+
+        // Sistema de decisão onde caso a temperatura atual for maior que a ideal vai mostrar uma mensagem
+        if (tempAT > tempIdeal){
+            divMsg.innerHTML = `
+            Com ${qtdMED} do medicamento ${nomeMd}, a temeperatura atual de ${tempAT}ºC, e o custo de R$${custoMED} por unidade, 
+            a temperatura está ${porcentagem}% acima do ideal,
+            o prejuizo estimado será de R$${valorTotal}
+            `;
+        } else {
+            // caso for igual vai mostrar outro tipo de mensagem
+            if (tempAT == tempIdeal){
+                divMsg.innerHTML = `
+                Com ${qtdMED} do medicamento ${nomeMd}, a temeperatura atual de ${tempAT}ºC, e o custo de R$${custoMED} por unidade, 
+                a temperatura está ideal,
+                tendo nenhum prejuizo estimado.
+                `;
+            } else{
+                // Se não for maior ou nem igual vai mostrar a mensagem de abaixo do ideal
+                divMsg.innerHTML = `
+                Com ${qtdMED} do medicamento ${nomeMd}, a temeperatura atual de ${tempAT}ºC, e o custo de R$${custoMED} por unidade, 
+                a temperatura está ${porcentagem}% abaixo do ideal,
+                o prejuizo estimado será de R$${valorTotal}.
+                `;
+            }
+        }
+    }
+
+</script>
