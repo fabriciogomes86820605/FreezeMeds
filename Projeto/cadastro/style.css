@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 11%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+
+}
+
+/* botão mostrar senha 1 */
+#icon {
+  position: absolute;
+  top: 51.99%;
+  right: 448px;
+  transform: translateY(-50%);
+  background: url(../img/olho.png);
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: auto;
+
+
+}
+
+#icon.hide {
+
+  background: url(../img/ocultar.png);
+  background-size: cover;
+
+}
+
+/* botão mostrar senha 2 */
+#icona {
+  position: absolute;
+  top: 61.99%;
+  right: 448px;
+  transform: translateY(-50%);
+  background: url(../img/olho.png);
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: auto;
+
+}
+
+
+#icona.hide {
+
+  background: url(../img/ocultar.png);
+  background-size: cover;
+
+}
+
+
+
+/* imagem de fundo */
+.corpo {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* Título */
+.h1 {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  left: 10px;
+}
+
+/* section para alinhar a input com h1 */
+section {
+  margin: auto;
+
+}
+
+/* input */
+.form-control {
+  width: 500px;
+  border-radius: 6px;
+  height: 45px;
+  font-size: 18px;
+  position: relative;
+  border: 2px solid;
+  border-color: #4a7aff #092b99;
+  background-color: transparent;
+  padding: 10px; 
+  margin-bottom: 10px; /* Adicionei margem inferior para separar os elementos */
+}
+
+
+
+
+
+
+
+
+
+/* div_master para centralizar tudo */
+.formulario {
+  width: 550px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-color: solid 50px #0EB9CB;
+  border: 0;
+  border-radius: 5px;
+  border-style: inset;
+  margin-top: 40px;
+}
+
+/* 
+  div_do_botão */
+.container {
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2_div_do_botão */
+.vertical-center {
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-90%);
+  transform: translateY(-90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* botão */
+
+.button {
+
+  background: rgb(247, 247, 247);
+  background: linear-gradient(to right, #4a7aff, #092b99);
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 1px bold;
+
+}
+
+.button span {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #092b99;
+  transition: all 0.3s ease;
+}
+
+.button:before {
+  height: 0%;
+  width: 2px;
+}
+
+.button:after {
+  width: 0%;
+  height: 2px;
+}
+
+.button:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.button:hover:before {
+  height: 100%;
+}
+
+.button:hover:after {
+  width: 100%;
+}
+
+.button span:hover {
+  color: #000;
+}
+
+.button span:before,
+.button span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: #4a7aff;
+  transition: all 0.3s ease;
+}
+
+.button span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.button span:after {
+  width: 0%;
+  height: 2px;
+}
+
+.button span:hover:before {
+  height: 100%;
+}
+
+.button span:hover:after {
+  width: 100%;
+}
+
+
+
+/* mostrar senha escrita */
+.b {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+
+}
+
+
+
+/* 
+link do  esqueceu senha */
+.a {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}

@@ -1,0 +1,236 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+
+}
+
+section{
+  position: relative;
+  width: 400px;
+  height: 60px;
+ 
+
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 11%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+
+}
+
+.exit{
+  width: 43px;
+  height: 43px;
+  position: fixed;
+  top: 11%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+
+}
+
+.user-pass{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140%;
+  height: 90%;
+ border: 0.5;
+  border-color: #092b99;
+  border-color: #4a7aff;
+  background: #ffffff;
+  font-size: 18px;
+  border-radius: 8px;
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+
+
+  
+}
+
+#icon{
+  position: absolute;
+  top: 45%;
+  right: -140px;
+  transform: translateY(-50%);
+  background: url(./img/olho.png);
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+
+}
+
+#icon.hide{
+ 
+  background: url(./img/ocultar.png);
+  background-size: cover;
+  
+}
+
+
+/* imagem de fundo */
+.corpo {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* Título */
+.h1 {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+
+
+/* input todo css das duas inputs */
+
+/* div_master para centralizar tudo */
+.formulario {
+  width: 500px;
+  height: 550px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* 
+div_do_botão */
+.container {
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2_div_do_botão */
+.vertical-center {
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-90%);
+  transform: translateY(-90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* 
+link do  esqueceu senha */
+.a {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+/* botão */
+.button {
+  background: rgb(16, 0, 238);
+  background: linear-gradient(to right, #4a7aff , #092b99);
+  width: 180px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 1px bold;
+  
+}
+.button span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   background:  #092b99;
+  transition: all 0.3s ease;
+}
+.button:before {
+  height: 0%;
+  width: 2px;
+}
+.button:after {
+  width: 0%;
+  height: 2px;
+}
+.button:hover{
+   background: transparent;
+  box-shadow: none;
+}
+.button:hover:before {
+  height: 100%;
+}
+.button:hover:after {
+  width: 100%;
+}
+.button span:hover{
+   color: #000;
+}
+.button span:before,
+.button span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: #4a7aff ;
+  transition: all 0.3s ease;
+}
+.button span:before {
+  width: 2px;
+  height: 0%;
+}
+.button span:after {
+  width: 0%;
+  height: 2px;
+}
+.button span:hover:before {
+  height: 100%;
+}
+.button span:hover:after {
+  width: 100%;
+}
+
+
+/* mostrar senha escrita */
+.b {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+
+}
+

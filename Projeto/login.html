@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login versão beta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="./img/medical-symbol.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="corpo">
+
+
+
+    <div class="formulario">
+        <h1 class="h1">LOGIN</h1>
+
+        <a href="#" class="brand-logo"><img src="./img/Logo.png" alt="logo" class="logo"></a>
+
+        <a href="./site_institucional/index.html" class="brand-logo"><img src="./img/voltar (1).png" alt="botão_sair"
+                class="exit"></a>
+
+        <!-- inputs não mudar a classe  -->
+        <section>
+            <input type="text" placeholder="Username" aria-label="Username" class="user-pass">
+        </section>
+
+
+        <section>
+
+
+            <input type="password" placeholder="Senha" aria-label="Password" value="" id="password" class="user-pass">
+            <div id="icon" onclick="mostrarsenha()"></div>
+
+
+        </section>
+
+
+        <!-- botão não mude a classe -->
+
+        <div class="container">
+            <div class="vertical-center">
+                <br><a href='./dashboard/dashboard.html'>
+                    <button type="button" class="button"> <span>Entrar</span></button> </a>
+            </div>
+        </div>
+
+        <a href="https://www.mozilla.org/pt-BR/" class="a"> Esqueceu Senha</a>
+
+        <a href="./cadastro/cadastro.html" class="a">Não possui conta? cadastre-se agora.</a>
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    //  Função para mudar de senha para texto
+    function mostrarsenha() {
+        const password = document.getElementById('password');
+        const icon = document.getElementById('icon');
+
+
+        if (password.type === 'password') {
+            password.setAttribute('type', 'text');
+            icon.classList.add('hide')
+        }
+        else {
+            password.setAttribute('type', 'password');
+            icon.classList.remove('hide')
+        }
+    }
+
+
+
+</script>
+
+<!-- https://uiverse.io/akshat-patel28/light-otter-66 -->

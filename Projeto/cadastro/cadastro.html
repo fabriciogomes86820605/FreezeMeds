@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro versão beta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../img/medical-symbol.png " >
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="corpo">
+
+    <a href="#" class="brand-logo"><img src="../img/Logo.png" alt="logo" class="logo"></a>
+
+
+
+    <div class="formulario">
+        <h1 class="h1">CADASTRO</h1> <br>
+
+
+        <!-- inputs não mudar a classe  -->
+        <section class="h1"> <br> <br> <br>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"> <br>
+        </section>
+
+        <section class="h1"> <br> <br> <br>
+            <input type="text" class="form-control" placeholder="CNPJ" aria-label="Username"> <br>
+        </section>
+
+        <section class="h1"> <br> <br> <br>
+            <input type="text" class="form-control" placeholder="Email" aria-label="Username"> <br>
+        </section>
+
+        <section class="h1"> <br> <br> <br>
+            <input type="password" class="form-control" placeholder="Senha" aria-label="Password" value=""
+                id="password">
+            <br>
+            <div id="icon" onclick="mostrarsenha()"></div>
+        </section>
+
+        <section class="h1"> <br> <br> <br>
+            <input type="password" class="form-control" placeholder="Confirmar Senha" aria-label="Password"
+                id="passworda">
+            <br>
+            <div id="icona" onclick="mostrarsenha2()"></div>
+        </section>
+
+
+        <!-- botão não mude a classe -->
+
+        <div class="h1">
+            <div class="container">
+                <div class="vertical-center">
+                    <br> <a href="../index.html"> <button type="button" class="button"><span>Entrar</span></button></a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="h1">
+        <a href="../login.html" class="a"> Já possui login ?</a>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    //  Função para mudar de senha para texto
+    function mostrarsenha() {
+        const password = document.getElementById('password');
+        const icon = document.getElementById('icon');
+
+        if (password.type === 'password') {
+            password.setAttribute('type', 'text');
+            icon.classList.add('hide')
+        }
+        else {
+            password.setAttribute('type', 'password');
+            icon.classList.remove('hide')
+        }
+    }
+
+    function mostrarsenha2() {
+        const passworda = document.getElementById('passworda');
+        const icona = document.getElementById('icona')
+
+        if (passworda.type === 'password') {
+            passworda.setAttribute('type', 'text');
+            icona.classList.add('hide')
+        } else {
+            passworda.setAttribute('type', 'password');
+            icona.classList.remove('hide')
+        }
+    }
+
+
+
+</script>
