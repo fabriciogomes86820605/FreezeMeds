@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #252525;
+    width: 20%;
+    height: 1000px;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.freeze {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 25px;
+    margin: 10%;
+
+
+}
+
+.button {
+    margin: 10%;
+    font-size: 17px;
+    margin-top: 50%;
+    text-align: left;
+    color: white;
+
+}
+
+.line {
+    color: white;
+}
+
+.outros {
+    color: white;
+    text-align: left;
+    margin: 10%;
+    justify-content: space-between;
+}
+
+.monitoramentopai {
+    margin: 20%;
+    background-color: rgb(95, 91, 86);
+    margin-bottom: 50px;
+
+}
+
+a {
+    margin: 10%;
+    font-size: 17px;
+    text-align: left;
+    color: white;
+    text-decoration-color: #252525;
+    padding-top: 9px;
+
+}
+
+.pai {
+    display: flex;
+    background-color: #635b5b;
+
+}
+
+.grafico_linha {
+    font-family: monospace;
+    height: 30%;
+    width: 40%;
+    text-align: center;
+    margin: 30px;
+    margin-top: 25%;
+    background-color: #3c3939;
+    color: #ffffff;
+    border-radius: 6px;
+
+}
+
+
+.grafico_barras{
+    margin-top: 25%;
+    font-family: monospace;
+    height: 30%;
+    width: 40%;
+    text-align: center;
+    margin: 30px;
+    margin-top: 25%;
+    background-color: #3c3939;
+    color: #ffffff;
+    border-radius: 6px;
+}

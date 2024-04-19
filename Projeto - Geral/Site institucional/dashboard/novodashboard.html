@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="novodash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="pai">
+        <div class="navbar">
+            <br>
+            <div class="freeze">
+                FreezeMeds
+            </div>
+            <br><br>
+            <div class="outros">
+
+                <a> Dashboard</a>
+                <br>
+                <br>
+                <a href="../conta/conta.html">Conta</a> <br>
+
+                <a href="../configuracoes/configuracoes.html">Configurações</a>
+
+                <a href="../configuracoes/configuracoes.html">Histórico</a>
+
+            </div>
+            <div class="line">______________________</div>
+            <br><br>
+            <div class="outros">
+                <ul>
+                    <a href="../cadastro/cadastro.html">Adicionar conta</a>
+
+                    <a href="../conta/conta.html">Trocar conta</a>
+
+                    <a href="../cadastro/cadastro.html">Sair</a>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="grafico_linha">
+
+            <h1>Grafico de linhas</h1>
+
+            <canvas id="grafico_linha"></canvas>
+
+        </div>
+
+        <div class="grafico_barras">
+
+            <h1>Grafico de barras</h1>
+            
+            <canvas id="grafico_barras"></canvas>
+
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('grafico_linha');
+        //   Setap 
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+
+                datasets: [{
+                    label: 'Temperatura',
+                    borderColor: 'rgb(255,0,0)',
+                    backgroundColor: 'rgb(255,0,0)',
+                    data: [30, 29, 28, 25, 22, 23],
+
+                    borderWidth: 1
+                }
+                ]
+
+
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const barras = document.getElementById('grafico_barras');
+
+        new Chart(barras, {
+            type: 'bar',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [{
+                    label: 'Temperatura Média',
+
+                    backgroundColor: 'rgb(0, 0, 255)',
+                    data: [22, 24, 27, 23, 20, 18],
+                    borderWidth: 1
+                },
+                
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
