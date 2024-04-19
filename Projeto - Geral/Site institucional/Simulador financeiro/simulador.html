@@ -1,47 +1,64 @@
 <!DOCTYPE html>
-<html lang="ptbr">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simuluador</title>
-</head>
+    <title>FreezeMeds</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <h1> <i> Simulador Financeiro </i> </h1> <br>
+    <header>
+        <nav class="nav-bar">
+            <div class="item-1">
+                <div class="logo-nav">
+                    <img class="img" src="freezemedslogo.png" alt="">
+                </div>
+            </div>
+            <div class="item-2">
+                <a href="#" class="link">Inicio</a>
+                <a href="#" class="link">Quem Somos</a>
+                <a href="#" class="link">Projeto</a>
+                <a href="#" class="link">Equipe</a>
+            </div>
+        </nav>
+    </header>
 
-    <p>Nome do Medicamento:</p>
-    <input type="text" id="input_nomeMd">
+    <div class="father">
+        <div class="child-left">
+            <h1> <i> Simulador Financeiro </i> </h1>
 
-    <p>Temperatura Ideal do Medicamento:</p>
-    <input type="text" id="input_idealMd">
-
-    <p>Temperatura Atual da Máquina:</p>
-    <input id="input_tempAT" type="text"> <br>
-
-    <p>Quantidade de medicamentos no freezer - (unidade): </p>
-    <input id="input_qtdMED" type="text"> <br>
-
-    <p>Custo do medicamento:</p>
-    <input id="input_custoMED" type="text"> <br> <br>
-
-    <button onclick="calc()"> Calcular prejuízo </button> <br> <br> <br>
-
-    <div>
-        <h2>Resultado:</h2>
-        <p id="divResul"></p>
-        <p id="divMsg"></p>
+            <p>Nome do Medicamento:</p>
+            <input type="text" id="input_nomeMd" class="inputs">
+        
+            <p>Temperatura Ideal do Medicamento:</p>
+            <input type="text" id="input_idealMd" class="inputs">
+        
+            <p>Temperatura Atual da Máquina:</p>
+            <input id="input_tempAT" type="text" class="inputs"> 
+        
+            <p>Quantidade de medicamentos no freezer - (unidade): </p>
+            <input id="input_qtdMED" type="text" class="inputs"> 
+        
+            <p>Custo do medicamento:</p>
+            <input id="input_custoMED" type="text" class="inputs"> <br>
+        
+            <button onclick="calc()" class="butao"> Calcular prejuízo </button> <br>
+        </div>
+        <div class="child-right">
+            <h2>Resultado:</h2>
+            <p id="divMsg"></p>
+            <p id="divResul"></p>
+        </div>
     </div>
-
+    
 </body>
-
 </html>
 
 <script>
-
-    // Declaramos as variaveis globais
-    var tempAT = 0;
+     // Declaramos as variaveis globais
+     var tempAT = 0;
     var qtdMED = 0;
     var custoMED = 0;
     var tempIdeal = 0;
@@ -94,5 +111,4 @@
             }
         }
     }
-
 </script>
