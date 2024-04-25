@@ -1,93 +1,124 @@
-* {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.pai {
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 
+}
 .navbar {
-    background-color: #252525;
+    background-color: #1e1d1d;
     width: 20%;
     height: 1000px;
     font-family: monospace;
     font-size: 20px;
+    text-decoration-color: #252525; 
+     /* backdrop-filter: blur(16px); */
+    /* box-shadow: 0px 8px 10px 2px  #252525; */
 }
 
-.freeze {
+.logo {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 60%;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.divisor {
     color: white;
-    font-size: 25px;
-    margin: 10%;
-
-
+    margin-bottom: 30%;
 }
 
-.button {
-    margin: 10%;
-    font-size: 17px;
-    margin-top: 50%;
-    text-align: left;
-    color: white;
-
-}
-
-.line {
-    color: white;
-}
-
-.outros {
+.navbar_botao {
     color: white;
     text-align: left;
     margin: 10%;
-    justify-content: space-between;
-}
-
-.monitoramentopai {
-    margin: 20%;
-    background-color: rgb(95, 91, 86);
-    margin-bottom: 50px;
 
 }
 
 a {
-    margin: 10%;
     font-size: 17px;
-    text-align: left;
     color: white;
     text-decoration-color: #252525;
-    padding-top: 9px;
-
 }
-
-.pai {
+.conteudo_dashboard {
+    height: 100%;
+    width: 90%;
     display: flex;
-    background-color: #635b5b;
+    background-color: rgb(25, 23, 23);
+    
+  
+}
+.cards{
+    display: flex;
+    flex-direction:row;
+    height: 30%;
+    width: 100%;
+    font-family: monospace;
+    color: #ffffff;
+    padding-top: 3.5%;
+    padding-left: 2%;
+ 
+   
+}
+.temperatura_media{
+    height: 30%;
+    width: 30%;
+    background-color: #252525;
+    border-radius: 6px;
+    text-align: center; 
+    margin-left: 3%;
+    padding: 3%;
+
+
+}
+.arduinos_com_problema{
+    height: 30%;
+    width: 30%;
+    background-color: #252525;
+    border-radius: 6px;
+    text-align: center; 
+    margin-left: 3%;
+
+  
 
 }
 
-.grafico_linha {
+.pai_grafico{
+
+    height: 50%;
+    width: 70%;
+    padding-top: 2%;
+
+}
+
+.grafico_monitoramento {
+    display: flex;
+    flex-direction:column;
+    height: 70%;
+    width: 70%;
     font-family: monospace;
-    height: 30%;
-    width: 40%;
     text-align: center;
-    margin: 30px;
-    margin-top: 25%;
-    background-color: #3c3939;
+    margin: 2%;
+    background-color: #252525;
     color: #ffffff;
     border-radius: 6px;
 
 }
-
-
-.grafico_barras{
-    margin-top: 25%;
+.grafico_semanal{
+    display: flex;
+    flex-direction:column;
+    height: 70%;
+    width: 70%;
     font-family: monospace;
-    height: 30%;
-    width: 40%;
     text-align: center;
-    margin: 30px;
-    margin-top: 25%;
-    background-color: #3c3939;
+    margin: 2%;
+    background-color: #252525;
     color: #ffffff;
     border-radius: 6px;
 }
