@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="novodash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="pai">
+        <div class="navbar">
+            <br>
+
+            <div class="logo">
+                <img src="logooficial-removebg-preview.png">
+            </div>
+
+
+            <br><br>
+            <div class="navbar_botao">
+
+                <a> Dashboard</a>
+                <br>
+                <br>
+                <a href="../conta/conta.html">Conta</a> <br>
+
+                <a href="../configuracoes/configuracoes.html">Configurações</a>
+
+                <a href="../configuracoes/configuracoes.html">Histórico</a>
+
+            </div>
+            <div class="divisor">_______________________</div>
+
+            <div class="navbar_botao">
+
+                <a href="../cadastro/cadastro.html">Adicionar conta</a> <br>
+
+                <a href="../conta/conta.html">Trocar conta</a><br>
+
+                <a href="../cadastro/cadastro.html">Sair</a>
+
+            </div>
+
+        </div>
+
+        <div class="conteudo_dashboard">
+
+
+            <div class="conteudo_dashboard_padastro">
+
+
+                <div class="cards">
+                    <div class="temperatura_media">
+
+
+                        Média |
+                        -2°C
+
+
+                    </div>
+
+                    <div class="arduinos_com_problema">
+                        Manutenção <br><br>
+                        Arduinos
+
+
+                    </div>
+                    <div class="ocilação_sensor">
+                        Oscilação <br><br>
+                        Variação entre -4°C e 1°C
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="grafico_monitoramento">
+
+                    <h1>Monitoramento</h1>
+
+                    <canvas id="lm35Temperatura"></canvas>
+
+                </div>
+                <div class="grafico_semanal">
+                    <h1>Média Semanal</h1>
+
+                    <canvas id="MediaSemanal"></canvas>
+
+                </div>
+            </div>
+        </div>
+      
+</body>
+
+</html>
+
+<script>       
+
+    var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
+    contextoLm35Temperatura.canvas.width = 1000;
+    contextoLm35Temperatura.canvas.height = 300;
+    var lm35Temperatura = new Chart(
+        contextoLm35Temperatura,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Temperatura',
+                    type: 'line',
+                    borderColor: ['rgb (0, 0, 255)'],
+                    backgroundColor: ['rgb (0, 0, 255)']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+
+
+    var paginacao = {};
+    var tempo = {};
+    function obterDados(grafico, endpoint) {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+        http.send(null);
+        var valores = JSON.parse(http.responseText);
+        if (paginacao[endpoint] == null) {
+            paginacao[endpoint] = 0;
+        }
+        if (tempo[endpoint] == null) {
+            tempo[endpoint] = 0;
+        }
+        // Exibir à partir do último elemento exibido anteriormente
+        var ultimaPaginacao = paginacao[endpoint];
+        paginacao[endpoint] = valores.length;
+        var valores = valores.slice(ultimaPaginacao);
+        valores.forEach((valor) => {
+            //Máximo de 60 itens exibidos no gráfico
+            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+                grafico.data.labels.shift();
+                grafico.data.datasets[0].data.shift();
+            }
+
+            grafico.data.labels.push(tempo[endpoint]++);
+            grafico.data.datasets[0].data.push(parseFloat(valor));
+            grafico.update();
+        })
+    }
+
+    setInterval(() => {
+        obterDados(lm35Temperatura, 'lm35/temperatura');
+    }, 1000);
+
+    var contextomediasemanal = document.getElementById('MediaSemanal').getContext('2d');
+    contextomediasemanal.canvas.width = 1900;
+    contextomediasemanal.canvas.height = 700;
+    var contextomediasemanal = new Chart(contextomediasemanal, {
+        type: 'bar',
+        data: {
+            labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
+            datasets: [{
+                label: 'Temperatura Média',
+
+                backgroundColor: 'rgb(255,255,255)',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1
+            },
+
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+</script>
