@@ -1,87 +1,78 @@
 <!DOCTYPE html>
+<!-- Esta é uma declaração do tipo de documento, indicando ao navegador que o documento segue o padrão HTML5. -->
 <html lang="en">
-
+<!-- Inicia o documento HTML e define o idioma do documento como inglês, com o atributo "lang". -->
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, que é uma codificação universal para textos. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura o viewport para permitir uma visualização responsiva em dispositivos móveis, ajustando a largura do conteúdo de acordo com a largura da tela. -->
     <title>Login versão beta</title>
+    <!-- Define o título da página como "Login versão beta". Esse título é exibido na guia do navegador. -->
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <!-- Inclui uma folha de estilo para uma fonte personalizada (Sora) do Google Fonts. O atributo "rel" especifica que é uma folha de estilo. -->
     <link rel="shortcut icon" type="imagex/png" href="./img/medical-symbol.png">
+    <!-- Define um ícone de atalho (favicon) para a página, utilizando uma imagem de ícone em formato PNG. O atributo "type" especifica o tipo de imagem e "href" especifica o caminho da imagem. -->
     <link rel="stylesheet" href="style.css">
+    <!-- Inclui uma folha de estilo CSS externa para estilização da página, utilizando o atributo "href" para especificar o caminho da folha de estilo. -->
 </head>
 
 <body class="corpo">
-
-
+    <!-- Inicia o corpo do documento HTML com a classe CSS "corpo" para estilização. -->
 
     <div class="formulario">
+        <!-- Inicia uma div (container) com a classe CSS "formulario", que provavelmente estiliza o formulário. -->
         <h1 class="h1">LOGIN</h1>
+        <!-- Exibe um título "LOGIN" dentro de uma tag <h1> com a classe CSS "h1" para estilização. -->
 
-        <a href="#" class="brand-logo"><img src="./img/Logo.png" alt="logo" class="logo"></a>
+        <a href="#" class="brand-logo">
+        <!-- Inicia um link (ancora) com a classe CSS "brand-logo" para estilização. O atributo "href" está vazio, indicando que o link não faz nada ao ser clicado. -->
+            <img src="../img/logooficial-removebg-preview.png" alt="logo" class="logo">
+            <!-- Dentro do link, exibe uma imagem com o caminho especificado pelo atributo "src", com o texto alternativo "logo" especificado pelo atributo "alt" e a classe CSS "logo" para estilização. -->
+        </a>
 
-        <a href="./site_institucional/index.html" class="brand-logo"><img src="./img/voltar (1).png" alt="botão_sair"
-                class="exit"></a>
+        <a href="../Página inicial/index.html" class="brand-logo">
+        <!-- Inicia um link (ancora) com a classe CSS "brand-logo" para estilização. O atributo "href" aponta para a página "site_institucional/index.html". -->
+            <img src="../img/voltar (1).png" alt="botão_sair" class="exit">
+            <!-- Dentro do link, exibe uma imagem com o caminho especificado pelo atributo "src", com o texto alternativo "botão_sair" especificado pelo atributo "alt" e a classe CSS "exit" para estilização. -->
+        </a>
 
-        <!-- inputs não mudar a classe  -->
-        <section>
-            <input type="text" placeholder="Username" aria-label="Username" class="user-pass">
-        </section>
+        <!-- inputs não mudar a classe -->
+        <!-- Este é um comentário indicando para não mudar a classe dos inputs abaixo. -->
+    
+            <!-- Inicia uma seção de conteúdo. -->
+        <div class="h1">
+            <input type="text" name="username" aria-label="Username" class="user-pass" placeholder="Username">
+          </div>
+            <!-- Um campo de entrada de texto para o nome de usuário com o atributo "name" especificando o nome do campo como "username". O atributo "aria-label" adiciona acessibilidade, permitindo que leitores de tela entendam o campo. A classe CSS "user-pass" estiliza o campo, e o atributo "placeholder" exibe o texto "Username" como exemplo. -->
+        
 
-
-        <section>
-
-
-            <input type="password" placeholder="Senha" aria-label="Password" value="" id="password" class="user-pass">
-            <div id="icon" onclick="mostrarsenha()"></div>
-
-
-        </section>
-
-
-        <!-- botão não mude a classe -->
-
-        <div class="container">
-            <div class="vertical-center">
-                <br><a href='./dashboard/dashboard.html'>
-                    <button type="button" class="button"> <span>Entrar</span></button> </a>
+    
+            <!-- Inicia uma seção de conteúdo. -->
+            <div class="h1">
+            <input type="password" placeholder="Senha" aria-label="Password" id="password" class="user-pass">
             </div>
+             
+
+        <div class="h1">
+            <!-- Inicia uma div (container) com a classe CSS "container", que provavelmente estiliza o conteúdo dentro dela. -->
+                          <br><a href='./dashboard/dashboard.html'>
+                <!-- Insere uma quebra de linha (tag <br>) e inicia um link (ancora) com o atributo "href" apontando para "dashboard/dashboard.html". -->
+                    <button type="button" class="button"> <span>Entrar</span></button>
+                    <!-- Um botão com o atributo "type" definido como "button". A classe CSS "button" estiliza o botão. Dentro do botão, insere um elemento <span> com o texto "Entrar". -->
+                </a>
         </div>
 
         <a href="https://www.mozilla.org/pt-BR/" class="a"> Esqueceu Senha</a>
+        <!-- Link para o site "mozilla.org" com a classe CSS "a". O texto exibido é "Esqueceu Senha". -->
 
-        <a href="./cadastro/cadastro.html" class="a">Não possui conta? cadastre-se agora.</a>
-
-
-
-
-
-
+        <a href="../cadastro_marca/cadastro.html" class="a">Não possui conta? cadastre-se agora.</a>
+        <!-- Link para a página "cadastro/cadastro.html" com a classe CSS "a". O texto exibido é "Não possui conta? cadastre-se agora." -->
     </div>
 
 </body>
-
-</html>
-
-<script>
-
-    //  Função para mudar de senha para texto
-    function mostrarsenha() {
-        const password = document.getElementById('password');
-        const icon = document.getElementById('icon');
-
-
-        if (password.type === 'password') {
-            password.setAttribute('type', 'text');
-            icon.classList.add('hide')
-        }
-        else {
-            password.setAttribute('type', 'password');
-            icon.classList.remove('hide')
-        }
-    }
+<!-- Encerra o corpo do documento HTML. -->
 
 
 
-</script>
 
-<!-- https://uiverse.io/akshat-patel28/light-otter-66 -->

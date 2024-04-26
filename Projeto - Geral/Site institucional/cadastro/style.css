@@ -1,278 +1,136 @@
+/* Reset de estilos padrão para todos os elementos */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margem de todos os elementos */
+  padding: 0; /* Remove padding de todos os elementos */
+  box-sizing: border-box; /* Define o box-sizing como border-box para todos os elementos, permitindo que as propriedades width e height incluam as bordas e o padding */
 }
 
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-
-}
-
-.logo{
-  width: 200px;
-  height: 200px;
-  position: fixed;
-  top: 11%;
-  left: 5%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-
-
-}
-
-/* botão mostrar senha 1 */
-#icon {
-  position: absolute;
-  top: 51.99%;
-  right: 448px;
-  transform: translateY(-50%);
-  background: url(../img/olho.png);
-  background-size: cover;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  margin: auto;
-
-
-}
-
-#icon.hide {
-
-  background: url(../img/ocultar.png);
-  background-size: cover;
-
-}
-
-/* botão mostrar senha 2 */
-#icona {
-  position: absolute;
-  top: 61.99%;
-  right: 448px;
-  transform: translateY(-50%);
-  background: url(../img/olho.png);
-  background-size: cover;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  margin: auto;
-
-}
-
-
-#icona.hide {
-
-  background: url(../img/ocultar.png);
-  background-size: cover;
-
-}
-
-
-
-/* imagem de fundo */
+/* Estilização do corpo da página */
 .corpo {
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  height: 100%; /* Define a altura do elemento como 100% da altura da janela */
+  width: 100%; /* Define a largura do elemento como 100% da largura da janela */
+  background-color: #252525; /* Define a cor de fundo como branco */
+  background-repeat: no-repeat; /* Impede a repetição da imagem de fundo */
+  background-size: 100%; /* Redimensiona a imagem de fundo para cobrir completamente o elemento */
 }
 
-/* Título */
+
+/* Estilização do logo */
+.logo {
+  width: 150px; /* Largura fixa de 150px para o logo */
+  height: 150px; /* Altura fixa de 150px para o logo */
+  position: fixed; /* Posição fixa, o elemento permanecerá no mesmo lugar ao rolar a página */
+  top: 14%; /* Define a posição superior do logo em 14% da altura do viewport */
+  left: 5%; /* Define a posição esquerda do logo em 5% do viewport */
+  transform: translate(-50%, -50%); /* Ajusta a posição do logo para que ele fique centralizado na posição especificada */
+  text-align: center; /* Alinha o texto no centro do elemento */
+}
+
+
+/* Estilização do título (h1) */
 .h1 {
-  font-family: "Sora", sans-serif;
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
+  font-optical-sizing: auto; /* Habilita a otimização ótica da fonte para legibilidade */
+  display: flex; /* Utiliza layout flexbox para organizar os elementos filhos */
+  justify-content: center; /* Alinha horizontalmente os elementos filhos no centro */
+  align-items: center; /* Alinha verticalmente os elementos filhos no centro */
+  color: #ffffff; /* Define a cor do texto como preto */
+  left: 10px; /* Define a posição esquerda do título como 10px do lado esquerdo do elemento pai */
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
   font-optical-sizing: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  left: 10px;
 }
 
-/* section para alinhar a input com h1 */
-section {
-  margin: auto;
-
-}
-
-/* input */
-.form-control {
-  width: 500px;
-  border-radius: 6px;
-  height: 45px;
-  font-size: 18px;
-  position: relative;
-  border: 2px solid;
-  border-color: #4a7aff #092b99;
-  background-color: transparent;
-  padding: 10px; 
-  margin-bottom: 10px; /* Adicionei margem inferior para separar os elementos */
-}
-
-
-
-
-
-
-
-
-
-/* div_master para centralizar tudo */
+/* Estilização do formulário centralizado */
 .formulario {
-  width: 550px;
-  height: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  border-color: solid 50px #0EB9CB;
-  border: 0;
-  border-radius: 5px;
-  border-style: inset;
-  margin-top: 40px;
+  width: 550px; /* Largura fixa de 550px para o formulário */
+  height: 400px; /* Altura fixa de 400px para o formulário */
+  margin: auto; /* Centraliza o formulário automaticamente dentro do elemento pai */
+  display: flex; /* Utiliza layout flexbox para organizar os elementos filhos */
+  flex-direction: column; /* Organiza os elementos filhos em direção de coluna */
+  justify-content: space-evenly; /* Distribui uniformemente o espaço entre os elementos filhos */
+  border-color: solid 50px #0EB9CB; /* Define a cor da borda com um tom de azul sólido */
+  border: 0; /* Remove qualquer borda adicional */
+  border-radius: 5px; /* Bordas arredondadas com raio de 5px */
+  border-style: inset; /* Estilo de borda interna */
+  margin-top: 40px; /* Adiciona margem superior de 40px */
 }
 
-/* 
-  div_do_botão */
-.container {
-  height: 200px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* 2_div_do_botão */
-.vertical-center {
-  margin: 0 auto;
-  position: absolute;
-  top: 40%;
-  -ms-transform: translateY(-90%);
-  transform: translateY(-90%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-/* botão */
-
-.button {
-
-  background: rgb(247, 247, 247);
-  background: linear-gradient(to right, #4a7aff, #092b99);
-  width: 130px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: 0;
-  border-radius: 5px;
+/* Estilização para campos de entrada de formulário */
+.form-control {
+  width: 500px; /* Largura fixa de 500px para os campos de entrada */
+  border-radius: 6px; /* Bordas arredondadas com raio de 6px */
+  height: 45px; /* Altura fixa de 45px para os campos de entrada */
+  font-size: 18px; /* Tamanho da fonte de 18px */
+  position: relative; /* Define posição relativa para os campos de entrada */
+  border: 2px solid; /* Define uma borda sólida de 2px */
+  border-color: #4a7aff ; /* Define a cor da borda com um gradiente entre #4a7aff e #092b99 */
+  background-color: transparent; /* Fundo transparente para os campos de entrada */
+  padding: 10px; /* Adiciona padding interno de 10px */
+  margin-bottom: 10px; /* Adiciona margem inferior de 10px para separar os campos de entrada */
   color: #fff;
-  font-weight: 1px bold;
-
-}
-
-.button span {
-  font-family: "Sora", sans-serif;
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
   font-optical-sizing: auto;
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
-.button:before,
-.button:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: #092b99;
-  transition: all 0.3s ease;
+input::placeholder{
+ color: white;
 }
 
-.button:before {
-  height: 0%;
-  width: 2px;
+.select-adm{
+  width: 150px;
+  height: 45px;
+  border-radius: 6px;
+  border: 2px solid; /* Define uma borda sólida de 2px */
+  border-color: #4a7aff;
+  background-color: transparent;
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
+  font-optical-sizing: auto;
+  color: #ffffff;
+
 }
 
-.button:after {
-  width: 0%;
-  height: 2px;
+option{
+  color: black;
 }
 
-.button:hover {
-  background: transparent;
-  box-shadow: none;
-}
-
-.button:hover:before {
-  height: 100%;
-}
-
-.button:hover:after {
-  width: 100%;
-}
-
-.button span:hover {
-  color: #000;
-}
-
-.button span:before,
-.button span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: #4a7aff;
-  transition: all 0.3s ease;
-}
-
-.button span:before {
-  width: 2px;
-  height: 0%;
-}
-
-.button span:after {
-  width: 0%;
-  height: 2px;
-}
-
-.button span:hover:before {
-  height: 100%;
-}
-
-.button span:hover:after {
-  width: 100%;
+/* Centraliza um contêiner vertical e horizontalmente */
+.container {
+  height: 200px; /* Altura fixa de 200px para o contêiner */
+  position: relative; /* Define posição relativa para o contêiner */
+  display: flex; /* Utiliza layout flexbox para organizar os elementos filhos */
+  justify-content: center; /* Alinha horizontalmente os elementos filhos no centro */
+  align-items: center; /* Alinha verticalmente os elementos filhos no centro */
 }
 
 
 
-/* mostrar senha escrita */
+/* Estilização dos botões */
+.button {
+  background: linear-gradient(to right, #4a7aff, #092b99); /* Gradiente de azul para preto */
+  width: 130px; /* Largura fixa de 130px para o botão */
+  height: 40px; /* Altura fixa de 40px para o botão */
+  padding: 0; /* Remove padding interno */
+  border: 0; /* Remove qualquer borda */
+  border-radius: 5px; /* Bordas arredondadas com raio de 5px */
+  color: #fff; /* Define a cor do texto como branco */
+}
+
+/* Estilização do texto */
 .b {
-  font-family: "Sora", sans-serif;
-  font-optical-sizing: auto;
-
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
+  font-optical-sizing: auto; /* Habilita a otimização ótica da fonte para legibilidade */
 }
 
-
-
-/* 
-link do  esqueceu senha */
+/* Estilização para link de "esqueceu senha" */
 .a {
-  font-family: "Sora", sans-serif;
-  font-optical-sizing: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
+  font-optical-sizing: auto; /* Habilita a otimização ótica da fonte para legibilidade */
+  display: flex; /* Utiliza layout flexbox para organizar os elementos filhos */
+  justify-content: center; /* Alinha horizontalmente os elementos filhos no centro */
+  align-items: center; /* Alinha verticalmente os elementos filhos no centro */
+  color: #fff; /* Define a cor do texto como preto */
+  position: absolute; /* Define posição absoluta para o link */
+  bottom: 75px; /* Posiciona o link 20px acima do final da página */
+  left: 45%; /* Centraliza o link horizontalmente */
 }

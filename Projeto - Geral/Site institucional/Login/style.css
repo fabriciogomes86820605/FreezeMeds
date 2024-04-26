@@ -1,236 +1,196 @@
-*{
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-
-}
-
-section{
-  position: relative;
-  width: 400px;
-  height: 60px;
- 
-
-}
-
-.logo{
-  width: 200px;
-  height: 200px;
-  position: fixed;
-  top: 11%;
-  left: 5%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-
-
-}
-
-.exit{
-  width: 43px;
-  height: 43px;
-  position: fixed;
-  top: 11%;
-  right: 5%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-
-
-}
-
-.user-pass{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 140%;
-  height: 90%;
- border: 0.5;
-  border-color: #092b99;
-  border-color: #4a7aff;
-  background: #ffffff;
-  font-size: 18px;
-  border-radius: 8px;
-  font-family: "Sora", sans-serif;
-  font-optical-sizing: auto;
-
-
-  
-}
-
-#icon{
-  position: absolute;
-  top: 45%;
-  right: -140px;
-  transform: translateY(-50%);
-  background: url(./img/olho.png);
-  background-size: cover;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-
-
-}
-
-#icon.hide{
- 
-  background: url(./img/ocultar.png);
-  background-size: cover;
-  
-}
-
-
+/* - Esta regra CSS global aplica-se a todos os elementos da página.
+- Define o valor de margin (margem) e padding (preenchimento) como zero, removendo qualquer espaço adicional ao redor dos elementos.
+- Define o box-sizing como border-box para incluir a margem e o padding na largura e altura do elemento, tornando mais fácil trabalhar com dimensões dos elementos. */
 /* imagem de fundo */
 .corpo {
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-size: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: #252525;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
+
+
+
+/* - Define o estilo para o elemento <body>.
+- Define o display como flex para usar o modelo de layout flexbox.
+- Alinha os itens centralizando-os verticalmente com align-items: center.
+- Centraliza horizontalmente com justify-content: center.
+- Define a altura mínima do corpo como 100% da altura da visualização (100vh). */
+
+
+/* - Define o estilo para os elementos <section>.
+- Define a posição como relativa, permitindo que os elementos dentro dela sejam posicionados relativamente a ela.
+- Define a largura como 400 pixels e a altura como 60 pixels. */
+
+.logo {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 14%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* - Define o estilo para os elementos com a classe .logo.
+- Define a largura e a altura como 150 pixels.
+- Define a posição como fixed para posicionar o elemento em relação à janela do navegador.
+- Posiciona o elemento a 14% a partir do topo da página e 5% a partir da esquerda.
+- Usa a função transform para centralizar o elemento em relação às coordenadas especificadas.
+- Define o alinhamento de texto como centralizado (text-align: center). */
+
+
+.exit {
+    width: 43px;
+    height: 43px;
+    position: fixed;
+    top: 11%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* - Define o estilo para os elementos com a classe .exit.
+- Define a largura e a altura como 43 pixels.
+- Define a posição como fixed para posicionar o elemento em relação à janela do navegador.
+- Posiciona o elemento a 11% a partir do topo da página e 5% a partir da direita.
+- Usa a função transform para centralizar o elemento em relação às coordenadas especificadas.
+- Define o alinhamento de texto como centralizado (text-align: center). */
+
+
+.user-pass {
+    width: 500px; /* Largura fixa de 500px para os campos de entrada */
+  border-radius: 6px; /* Bordas arredondadas com raio de 6px */
+  height: 45px; /* Altura fixa de 45px para os campos de entrada */
+  font-size: 18px; /* Tamanho da fonte de 18px */
+  position: relative; /* Define posição relativa para os campos de entrada */
+  border: 2px solid; /* Define uma borda sólida de 2px */
+  border-color: #4a7aff ; /* Define a cor da borda com um gradiente entre #4a7aff e #092b99 */
+  background-color: transparent; /* Fundo transparente para os campos de entrada */
+  padding: 10px; /* Adiciona padding interno de 10px */
+  margin-bottom: 5px; /* Adiciona margem inferior de 10px para separar os campos de entrada */
+  color: #fff;
+  font-family: "Sora", sans-serif; /* Define a fonte como "Sora" com fallback para sans-serif */
+  font-optical-sizing: auto;
+}
+
+.user-pass::placeholder{
+    color: #fff;
+}
+
+/* - Define o estilo para os elementos com a classe .user-pass (provavelmente campos de entrada).
+- Define a posição como absolute para posicionar o elemento em relação ao elemento pai com posição relativa ou absoluta.
+- Posiciona o elemento no canto superior esquerdo com top: 0 e left: 0.
+- Define a largura como 140% e a altura como 90%.
+- Define uma borda de 0,5 pixels com cor azul (#092b99 e #4a7aff, mas apenas o último valor prevalece).
+- Define o fundo como branco (#ffffff).
+- Define o tamanho da fonte como 18 pixels.
+- Define um raio de borda de 8 pixels para cantos arredondados.
+- Define a fonte como "Sora" (deve ser importada) com fallback para sans-serif.
+- Define o tamanho óptico da fonte como automático (font-optical-sizing: auto). */
+
+
+
+
+
+
+
+/* - Define o estilo para o elemento com a classe .corpo.
+- Define a altura e largura como 100% para ocupar toda a tela.
+- Define a cor de fundo como branca (#fff).
+- Define que a imagem de fundo não deve se repetir (background-repeat: no-repeat).
+- Ajusta a imagem de fundo para cobrir totalmente a área (background-size: 100%). */
+
 
 /* Título */
 .h1 {
-  font-family: "Sora", sans-serif;
-  font-optical-sizing: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
+/* - Define o estilo para os elementos com a classe .h1 (provavelmente títulos).
+- Define a fonte como "Sora" (deve ser importada) com fallback para sans-serif.
+- Define o tamanho óptico da fonte como automático (font-optical-sizing: auto).
+- Define o display como flex para usar o modelo de layout flexbox.
+- Centraliza horizontalmente com justify-content: center.
+- Centraliza verticalmente com align-items: center.
+- Define a cor como preta (#000). */
 
 
 /* input todo css das duas inputs */
-
 /* div_master para centralizar tudo */
 .formulario {
-  width: 500px;
-  height: 550px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-/* 
-div_do_botão */
-.container {
-  height: 200px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* - Define o estilo para os elementos com a classe .formulario (provavelmente um formulário).
+- Define a largura como 500 pixels e a altura como 550 pixels.
+- Centraliza o elemento com margin: auto.
+- Define o display como flex para usar o modelo de layout flexbox.
+- Define a direção flexível como coluna (flex-direction: column).
+- Justifica o espaço entre os elementos de maneira uniforme (justify-content: space-evenly). */
 
-/* 2_div_do_botão */
-.vertical-center {
-  margin: 0 auto;
-  position: absolute;
-  top: 40%;
-  -ms-transform: translateY(-90%);
-  transform: translateY(-90%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-}
+
 
 /* 
 link do  esqueceu senha */
 .a {
-  font-family: "League Spartan", sans-serif;
-  font-optical-sizing: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing:
+
+ auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
 }
+
+/* - Define o estilo para os elementos com a classe .a (provavelmente um link para "esqueceu a senha").
+- Define a fonte como "League Spartan" (deve ser importada) com fallback para sans-serif.
+- Define o tamanho óptico da fonte como automático (font-optical-sizing: auto).
+- Define o display como flex para usar o modelo de layout flexbox.
+- Centraliza horizontalmente com justify-content: center.
+- Centraliza verticalmente com align-items: center.
+- Define a cor como preta (#000). */
 
 /* botão */
 .button {
-  background: rgb(16, 0, 238);
-  background: linear-gradient(to right, #4a7aff , #092b99);
-  width: 180px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  font-weight: 1px bold;
-  
+    background: linear-gradient(to right, #4a7aff, #092b99);
+    width: 180px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
 }
-.button span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.button:before,
-.button:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-   background:  #092b99;
-  transition: all 0.3s ease;
-}
-.button:before {
-  height: 0%;
-  width: 2px;
-}
-.button:after {
-  width: 0%;
-  height: 2px;
-}
-.button:hover{
-   background: transparent;
-  box-shadow: none;
-}
-.button:hover:before {
-  height: 100%;
-}
-.button:hover:after {
-  width: 100%;
-}
-.button span:hover{
-   color: #000;
-}
-.button span:before,
-.button span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-   background: #4a7aff ;
-  transition: all 0.3s ease;
-}
-.button span:before {
-  width: 2px;
-  height: 0%;
-}
-.button span:after {
-  width: 0%;
-  height: 2px;
-}
-.button span:hover:before {
-  height: 100%;
-}
-.button span:hover:after {
-  width: 100%;
-}
+
 
 
 /* mostrar senha escrita */
 .b {
-  font-family: "League Spartan", sans-serif;
-  font-optical-sizing: auto;
-
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
 }
 
+/* - Define o estilo para os elementos com a classe .b (provavelmente campos de entrada).
+- Define a fonte como "League Spartan" (deve ser importada) com fallback para sans-serif.
+- Define o tamanho óptico da fonte como automático (font-optical-sizing: auto). */
