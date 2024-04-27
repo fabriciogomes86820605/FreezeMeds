@@ -4,107 +4,131 @@ body {
     box-sizing: border-box;
 }
 .pai {
-    display: flex;
-    position: fixed;
-    height: 100%;
-    width: 100%;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: fixed;
 
 }
 .navbar {
+    display: flex;
+    flex-direction: column;
     background-color: #1e1d1d;
-    width: 20%;
-    height: 1000px;
-    font-family: monospace;
-    font-size: 20px;
-    text-decoration-color: #252525; 
-     /* backdrop-filter: blur(16px); */
-    /* box-shadow: 0px 8px 10px 2px  #252525; */
+    width: 100%;
+    height: 1080px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+.navbar a{
+    display: flex;
+    flex-direction: column;
+    margin-left:15px ;
+    margin-top: 15px;
+    text-decoration: none;  /* Comando para tirar a linha do link  */
+    color: #ffffff;
+
+}
+.navbar h3{
+    margin-left:15px ;
+    color: white;
+    font-size:medium;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 115px;
+}
 .logo {
     display: flex;
     flex-direction: column-reverse;
-    width: 60%;
+    width: 80%;
+    text-align: center;
 
 
-}
-
-.divisor {
-    color: white;
-    margin-bottom: 30%;
-}
-
-.navbar_botao {
-    color: white;
-    text-align: left;
-    margin: 10%;
 
 }
 
-a {
-    font-size: 17px;
-    color: white;
-    text-decoration-color: #252525;
-}
 .conteudo_dashboard {
-    height: 100%;
-    width: 90%;
+    height: 1100px;
+    width: 1100px;
     display: flex;
     background-color: rgb(25, 23, 23);
     
   
 }
+
+.conteudo_dashboard_padastro{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+
+
+    
+
+}
+
+
 .cards{
     display: flex;
     flex-direction:row;
-    height: 30%;
-    width: 100%;
+    height: 10%;
+    width: 600px;
     font-family: monospace;
     color: #ffffff;
-    padding-top: 3.5%;
-    padding-left: 2%;
+    font-size:medium;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+   
  
    
 }
+
+.cards p{
+  text-align: left; 
+   color: #ffffff;
+   font-size: x-large;
+   margin: 5px;
+   margin-left: 10px;
+}
+.cards a{
+    text-align: center; 
+    align-items: center;
+   color: #ffffff;
+   font-size: x-large;
+   margin: 3px;
+}
+
 .temperatura_media{
-    height: 30%;
-    width: 30%;
+    display: flex;
+   flex-direction: column;
+    height: 100px;
+    width: 300px;
     background-color: #252525;
     border-radius: 6px;
-    text-align: center; 
-    margin-left: 3%;
-    padding: 3%;
-
 
 }
-.arduinos_com_problema{
-    height: 30%;
-    width: 30%;
-    background-color: #252525;
-    border-radius: 6px;
-    text-align: center; 
-    margin-left: 3%;
-
-  
-
+.ocilação_sensor{
+    display: flex;
+    flex-direction: column;
+     height: 100px;
+     width: 300px;
+     background-color: #252525;
+     border-radius: 6px;
+     margin-left: 10px;
+ 
+    
 }
 
-.pai_grafico{
 
-    height: 50%;
-    width: 70%;
-    padding-top: 2%;
-
-}
 
 .grafico_monitoramento {
     display: flex;
     flex-direction:column;
-    height: 70%;
-    width: 70%;
+    height: 300px;
+    width: 600px;
     font-family: monospace;
     text-align: center;
-    margin: 2%;
+    margin-bottom:15px;
+    margin-left: 20px;
     background-color: #252525;
     color: #ffffff;
     border-radius: 6px;
@@ -113,12 +137,32 @@ a {
 .grafico_semanal{
     display: flex;
     flex-direction:column;
-    height: 70%;
-    width: 70%;
+    height: 300px;
+    width: 600px;
     font-family: monospace;
     text-align: center;
-    margin: 2%;
+    margin-left: 20px;
     background-color: #252525;
     color: #ffffff;
     border-radius: 6px;
+}
+.como_foi_feito p{
+    font-family:monospace;
+    color: white;
+    text-align: center;
+    font-size:x-large;
+    align-items: center;
+
+}
+.como_foi_feito{ 
+    display: flex;
+    flex-direction:column;
+    height: 300px;
+    width: 450px;
+    background-color: #252525;
+    border-radius: 6px;
+    margin-left: 30px;
+   margin-top: 5px;
+ 
+ 
 }
