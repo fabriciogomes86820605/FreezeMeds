@@ -13,25 +13,25 @@
 
         <div class="nav_bar">
 
-            <img class="logo" src="logooficial-removebg-preview.png" alt="">
+            <img class="logo" src="img/logooficial-removebg-preview.png" alt="">
             <div class="botoes">
 
                 <a href="#home">
-                    <img class="img_botão" src="casa.png" alt="">
+                    <img class="img_botão" src="img/casa.png" alt="">
                 </a>
                 <a href="#Calculadora">
-                    <img class="img_botão" src="calculadora.png" alt="">
+                    <img class="img_botão" src="img/calculadora.png" alt="">
                 </a>
 
 
                 <a href="#Contato">
-                    <img class="img_botão" src="atendimento-ao-cliente.png" alt="">
+                    <img class="img_botão" src="img/atendimento-ao-cliente.png" alt="">
                 </a>
-                <a href="">
+                
                     <p>|</p>
-                </a>
+               
                 <a href="">
-                    <img class="img_botão" src="do-utilizador.png" alt="">
+                    <img class="img_botão" src="img/do-utilizador.png" alt="">
                 </a>
 
 
@@ -55,13 +55,13 @@
     </div>
     <div>
         <img class="imagem"
-            src="6712964-resumo-saude-medica-ciencia-saude-icone-tecnologia-digital-medico-conceito-moderno-inovacao-tratamento-medicina-em-hi-tech-futuro-fundo-azul-para-papel-de-parede-modelo-web-d.jpg"
+            src="img/medicina.jpg"
             alt="">
     </div>
 
 
     <div class="sobre_nos">
-        <img class="img_sobre_nos" src="temperatura.png" alt="">
+        <img class="img_sobre_nos" src="img/temperatura.png" alt="">
 
 
 
@@ -99,7 +99,7 @@
 
     <div class="div_por_que_comprar">
         <h3>Por que devo comprar ?</h3>
-        <img class="img_por_que" src="Dinheiro.png" alt="">
+        <img class="img_por_que" src="img/Dinheiro.png" alt="">
     </div>
 
     <section id="Calculadora">
@@ -152,10 +152,11 @@
 
     </section>
     <hr>
+<section id="Contato">
 
     <div class="final_pagina">
 
-        <img class="logo" src="logooficial-removebg-preview.png" alt="">
+        <img class="logo" src="img/logooficial-removebg-preview.png" alt="">
 
         <div class="botao_final">
 <p>
@@ -168,6 +169,8 @@
         </div>
 
     </div>
+</section>
+
 
 
 
@@ -188,7 +191,23 @@
         var totalReal = total - total1;
         var porcentagem = (precoMed * total1);
 
-        div_msg.innerHTML = `<br>      <h3> Resultado </h3> <br>Olá, ${nome}. Obrigado por consultar nosso sistema de simulador financeiro,
+        div_msg.innerHTML += `
+        
+        <h3> Como é feito: </h3>
+              
+                    Os calculos foram feitos com base nos dados de nossas pesquisas,
+                    em que 15% dos medicamentos são perdidos por conta do mau armazenamento de medicamentos fizemos este
+                    calculo com a (Quantidade de medicamentos informadas pelo usuário *
+                    o Preço do medicamento informado também pelo usuário (que é o total)), (Assim fazemos o calculo da
+                    perda de 15% onde
+                    pegamos a quantidade de medicamentos * os 15% de perdas dividido por 100 pois se trata de uma
+                    porcentagem de perdas (que é o total1)),
+                    com isso conseguimos pegar o Lucro real do usuário que é o total - o total1. Depois fazemos a
+                    porcentagem de perda do
+                    usuário que é o Preço do medicamento * o total1, Assim concluimos o calculo do simulador financeiro
+               
+        
+        <br>      <h3> Resultado </h3> <br>Olá, ${nome}. Obrigado por consultar nosso sistema de simulador financeiro,
          com base nas informações constatadas, se tem a informação de que seu faturamento total é de R$${totalReal}
         e a porcentagem de perda por conta de mau armazenamento dos medicamentos pode ser de até ${porcentagem.toFixed(0)}%,
          com isso para evitar esta perda de lucro com seus produtos, adquira o nosso sistema de monitoramento de temperatura
