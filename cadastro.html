@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <header>
+        <div style="width: max-content; height: 60px;">
+            <img class="logo" src="img/logooficial-removebg-preview.png" alt="">
+        </div>
+
+        <div class="nav_bar">
+            <img class="logo" src="img/logooficial-removebg-preview (1).png" alt="">
+        </div>
+
+    </header>
+
+    <center>
+        <br>
+        <div class="container" id="CADmarca" style="display: block;">
+            <h1> CADASTRE SUA MARCA </h1>
+
+            <br><br>
+            <input type="text" id="input_nome_marca" placeholder="Nome">
+            <br>
+            <input type="text" id="input_cnpj_marca" placeholder="CNPJ">
+            <br>
+            <input type="text" id="input_email_marca" placeholder="Email">
+            <br>
+            <input type="password" id="input_senha_marca" placeholder="Senha">
+            <br>
+            <input type="password" id="input_confirmar_marca" placeholder="Confirmar Senha">
+            <br>
+            <input type="text" id="input_tel1" placeholder="Telefone 1">
+            <br>
+            <input type="text" id="input_tel2" placeholder="Telefone 2">
+            <br>
+            <button onclick="CadastrarMarca()">Cadastrar</button>
+
+        </div>
+
+
+        <div class="container" id="orcamento"
+            style=" display: block; display: flex; flex-direction: row; justify-content: space-evenly;">
+
+            <div id="calculo" style="display: none; display: flexbox; flex-direction: column; width: fit-content;">
+                <h1> ORÇAMENTO </h1>
+                <br>
+                Um refrigerador custa R$9.500
+                <br><br>
+                Quantas farmácias serão atendidas? <input type="number" id="input_qtdFarm">
+                <br><br>
+                Quantas câmaras serão utilizadas? <input type="number" id="input_qtdCam">
+                <br>
+                <button onclick="Calcular()">Calcular Orçamento</button>
+            </div>
+
+            <div id="ResultadoOrcamento"
+                style="display: none; display: flexbox; flex-direction: column; width: fit-content;">
+
+                <h1> RESULTADO ORÇAMENTO:</h1>
+
+                <div id="resultado"></div>
+                <div id="Prosseguir" style="display: none;"><button onclick="prosseguir()">Prosseguir Compra</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container" id="pagamento"
+            style="display: none; display: flexbox; flex-direction: row; ;">
+
+            <div id="metodo" style="display: block; display: flexbox; flex-direction: column; width: fit-content; margin-left: 15px;;">
+                <h2>SELECIONE O MÉTODO DE PAGAMENTO </h2>
+
+                <select id="forma">
+
+                    <option value="credito/debito">Cartão de Crédito/Débito</option>
+                    <option value="boleto">Cartão de Boleto</option>
+                    <option value="pix">PIX</option>
+
+                </select>
+                <br><br>
+                <button onclick="ConfirmarMetodo()">Confimar Método</button>
+            </div>
+
+
+            <div class="" id="creditoDebito" style="display: block; display: flexbox; ">
+
+                <h2> PAGAMENTO EM CARTÃO </h2>
+
+                Numero do Cartão: <input type="number" id="input_numCard">
+                <br><br>
+                Numero de Segurança: <input type="number" id="input_numSeg">
+                <br><br>
+                Nome do Titular: <input type="text" id="input_nomeTitular">
+                <br><br>
+                <select id="prazo">PARCELAMENTO
+
+                    <option value="À Vista">À Vista</option>
+                    <option value="Par6">Parcelado em 6 meses</option>
+                    <option value="Par12">Parcelado em 12 meses</option>
+
+
+                </select>
+                <br>
+                <button onclick="ConfirmarCompra()">Confirmar compra</button>
+
+            </div>
+
+            <div class="" id="boleto" style="display: none; display: flexbox; align-self: flex-end; ">
+
+                <h2> PAGAMENTO EM BOLETO </h2>
+
+                Inserir número do boleto: <input type="number">
+                <br><br>
+                Nós confirmaremos automaticamento a efetuação do pagamento!
+
+            </div>
+
+            <div id="pix" style="display: none; display: flexbox; align-self: flex-end;">
+
+                <h2> PAGAMENTO EM PIX </h2>
+    
+                Copie e cole o número a seguir no aplicativo do banco utilizado pela empresa e efetue o pagamento<br>
+                <div id="pixMensagem"></div>
+                <br><br>
+                Nós confirmaremos automaticamento a efetuação do pagamento!
+    
+    
+            </div>  
+
+
+        </div>
+       
+        </div>
+       
+        </div>
+
+        <div class="container" id="CADuser" style="display: none;">
+            <h1> CADASTRE SEU USUÁRIO </h1>
+
+            <br>
+            <input type="text" id="input_nome_user" placeholder="USERname">
+            <br>
+            <input type="text" id="input_cpf_user" placeholder="CPF">
+            <br>
+            <input type="text" id="input_senha_user" placeholder="Senha">
+            <br>
+            <input type="text" id="input_confirmar_user" placeholder="Confirmar Senha">
+            <br><br>
+            <button onclick="CadastrarUser()">Cadastrar</button>
+            <br><br>
+
+        </div>
+
+        <div class="container" id="LOGuser" style="display: none;">
+
+            LOGIN
+            <br><br>
+            <input type="text" id="input_userLogin" placeholder="insira seu nome de usuário">
+            <br><br>
+            <input type="text" id="input_emailLogin" placeholder="insira o email da empresa">
+            <br><br>
+            <input type="text" id="input_cpfLogin" placeholder="Insira seu cpf">
+            <br><br>
+            <input type="password" id="input_senhaLogin" placeholder="senha">
+            <br><br>
+            <br>
+            <button onclick="Logar()">Entrar</button>
+            <br><br>
+
+           
+
+        </div>
+
+        <div id="Dash" style="display: none">
+
+            <a href="oficialdashboard.html" style="font-family: monospace;">CLIQUE PARA ENTRAR NA DASHBOARD</a>
+
+        </div>
+
+        </div>
+
+
+    </center>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_nomeMarca = []
+    var lista_cnpjMarca = []
+    var lista_emailMarca = []
+
+    var lista_cpfUser = []
+    var lista_nomeUser = []
+    var lista_senhaUser = []
+
+    function CadastrarMarca() {
+
+
+        var nomeMarca = input_nome_marca.value;
+        var cnpjMarca = input_cnpj_marca.value;
+        var emailMarca = input_email_marca.value;
+        var senhaMarca = input_senha_marca.value;
+        var confirmarMarca = input_confirmar_marca.value;
+        var arrobaPosicaoMarca = emailMarca.indexOf("@");
+        var tel1 = input_tel1.value
+        var tel2 = input_tel2.value
+
+        var indice_lista_nomeMarca = lista_nomeMarca.indexOf(nomeMarca);
+        var indice_lista_emailMarca = lista_emailMarca.indexOf(emailMarca);
+        var indice_lista_cnpjMarca = lista_cnpjMarca.indexOf(cnpjMarca);
+
+        if (nomeMarca.length < 3 ||
+            nomeMarca == '' ||
+            cnpjMarca.length < 13 ||
+            cnpjMarca == '' ||
+            arrobaPosicaoMarca < 1 ||
+            senhaMarca.length < 8 ||
+            senhaMarca == '' ||
+            senhaMarca != confirmarMarca ||
+            confirmarMarca == '' ||
+            tel1.length < 11 ||
+            tel1 == '' ||
+            tel2.length < 11 ||
+            tel2 == '') {
+
+            alert('Falha ao cadastrar a Marca!')
+
+        } else {
+
+            if (indice_lista_nomeMarca == -1 ||
+                indice_lista_emailMarca == -1 ||
+                indice_lista_cnpjMarca == -1) {
+
+                lista_emailMarca.push(emailMarca);
+                lista_nomeMarca.push(nomeMarca);
+                lista_cnpjMarca.push(cnpjMarca);
+                alert('Cadastro de Marca executado com Sucesso!');
+
+
+                //Descomentar código para continuidade a apresentação
+                
+                
+                //CADmarca.style.display = 'none'
+                //calculo.style.display = 'block'
+                //ResultadoOrcamento.style.display = 'block'
+
+            } else {
+
+
+                alert('Essa marca já está cadastrada!')
+
+            }
+        }
+
+    }
+
+    function Calcular() {
+
+        var qtdCam = input_qtdCam.value
+        var qtdFarm = input_qtdFarm.value
+        var total = qtdFarm * 6
+        var preco = qtdCam * 9500
+
+        if (qtdCam > total) {
+
+            alert('O número de câmaras é maior do que o permitido!')
+
+        } else {
+            resultado.innerHTML = `O valor total para ${qtdFarm} é de R$${preco} `
+            Prosseguir.style.display = 'block'
+
+        }
+
+    }
+
+    function prosseguir() {
+
+        calculo.style.display = 'none'
+        pagamento.style.display = 'block'
+        ResultadoOrcamento.style.display = 'none'
+        metodo.style.display = 'block'
+
+    }
+
+    function ConfirmarMetodo() {
+
+        var opcao = forma.value
+        if (opcao == 'pix') {
+
+            pix.style.display = 'block'
+            var chavePix = Math.random();
+            var final = chavePix * 100;
+
+            pixMensagem.innerHTML = `Sua chave pix é <br> ${final}`
+            creditoDebito.style.display = 'none'
+            boleto.style.display = 'none'
+
+        } else if (opcao == 'boleto') {
+
+            boleto.style.display = 'block'
+            creditoDebito.style.display = 'none'
+            pix.style.display = 'none'
+
+        } else {
+
+            creditoDebito.style.display = 'block'
+            pix.style.display = 'none'
+            boleto.style.display = 'none'
+
+        }
+
+    }
+
+
+    function ConfirmarCompra() {
+
+        var numCard = input_numCard.value
+        var nome = input_nomeTitular.value
+        var numSeg = input_numSeg.value
+        if(numCard == '' || nome == '' || numSeg == ''){
+
+            alert('Insira as informações corretamente')
+
+        }else {
+        alert('compra confirmada! Obrigado!')
+        CADuser.style.display = 'block'
+        creditoDebito.style.display = 'none'
+        pagamento.style.display = 'none'
+        metodo.style.display = 'none'
+
+        }
+
+    }
+
+
+    function CadastrarUser() {
+
+
+        var nomeUser = input_nome_user.value
+        var cpfUser = input_cpf_user.value
+        var senhaUser = input_senha_user.value
+        var confirmarUser = input_confirmar_user.value
+
+        var indice_lista_nomeUser = lista_nomeMarca.indexOf(nomeUser);
+        var indice_lista_cpfUser = lista_cpfUser.indexOf(cpfUser);
+        var indice_lista_senhaUser = lista_senhaUser.indexOf(senhaUser);
+
+        if (nomeUser.length < 3 ||
+            nomeUser == '' ||
+            cpfUser.length < 13 ||
+            cpfUser == '' ||
+            senhaUser.length < 8 ||
+            senhaUser == '' ||
+            senhaUser != confirmarUser ||
+            confirmarUser == '') {
+
+            alert('Falha ao cadastrar o usuário!')
+
+        } else {
+
+            if (indice_lista_nomeUser == -1 ||
+                indice_lista_cpfUser == -1) {
+
+                lista_nomeUser.push(nomeUser);
+                lista_cpfUser.push(cpfUser);
+                alert('Cadastro de Usuário executado com Sucesso!');
+
+                LOGuser.style.display = 'block'
+                CADuser.style.display = 'none'
+
+            } else {
+
+                alert('Já existe um usuário cadastrado!')
+
+            }
+        }
+    }
+
+
+    function Logar() {
+
+        var UserLogin = input_userLogin.value;
+        var emailLogin = input_emailLogin.value;
+        var cpfLogin = input_cpfLogin.value;
+        var senhaLogin = input_senhaLogin.value;
+
+        if (lista_cpfUser != -1 && lista_cnpjMarca != -1 && lista_emailMarca != -1 && lista_senhaUser != -1) {
+
+            alert('Login executado com sucesso!')
+            LOGuser.style.display = 'none'
+            Dash.style.display = 'block'
+
+
+        } else {
+
+            alert('Falha ao efetuar o login!')
+
+        }
+
+    }
+
+
+</script>
