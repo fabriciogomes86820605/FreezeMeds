@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreezeMeds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="Home">
+
+        <div class="ContainerMaior1">
+            <div class="CaixaMenor1">
+                <img src="./Imagens/SloganBranco.png" alt="">
+                <div class="CaixaMenorMenor1">
+                    <h3 class="TextoTeste2">A FreezeMeds é: </h3>
+                    <div class="CaixaSpan">
+                        <span class="TextoTeste" id="Main" data-words="Futuro,Inovação, Tecnologia, Monitoramento" data-delay="1000"></span>
+                        <span class="TextoTeste" data-owner="main" style="transition: all 0.1s ease 0s; opacity: 1;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            <nav id="Panelinha" >
+                <img src="./Imagens/logoMini.png" alt="">
+                <ul>
+                    <li>Home</li>
+                    <li> Contato</li>
+                    <li>Funcionamento</li>
+                    <li>Equipe</li>
+                    <li>Simulador</li>
+                    <li>Cadastro</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section id="Sobre">
+
+        <div class="ConteudoAbertura">
+            <div class="TextoAbertura">
+                <p>A FreezeMeds, está redefinindo os padrões de armazenamento de medicamentos sensíveis à temperatura. Com tecnologia de última geração e câmaras de resfriamento desenvolvidas internamente, garantimos a integridade dos medicamentos termolábeis. Navegue em nosso site e descubra como estamos moldando o futuro da conservação de medicamentos.</p>
+            </div>
+        </div>
+        
+    </section>
+    <section id="ComoFunciona">
+
+        <div class="CaixaGrandeTela1">
+            <div class="CaixaMedia">
+            <div class="CaixaMenor">
+                <h1>Como funciona?</h1>
+                <div class="CaixaMae" >
+                    <div class="ConteudoCaixa">
+                        <div class="ConteudoImagem">
+                            <img src="/Imagens/ComoFunciona/camera.png" alt="">
+                        </div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nemo quos, asperiores sunt, fugiat dolorum voluptatem totam quis, nisi vitae soluta. Consequatur recusandae ipsum rem aut, nesciunt tenetur corporis odit?</p>
+                    </div>
+                </div>
+                <img src="./Imagens/ComoFunciona/sensor.png" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nemo quos, asperiores sunt, fugiat dolorum voluptatem totam quis, nisi vitae soluta. Consequatur recusandae ipsum rem aut, nesciunt tenetur corporis odit?</p>
+                <img src="./Imagens/ComoFunciona/note.png" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nemo quos, asperiores sunt, fugiat dolorum voluptatem totam quis, nisi vitae soluta. Consequatur recusandae ipsum rem aut, nesciunt tenetur corporis odit?</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+<section id="QuemSomos">
+
+    <div class="CaixaGrandeTela2">
+        <div class="CaixaMediaComo">
+            <div class="ConteudoComo">
+                <h1>Quem Somos</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequatur totam ducimus alias optio dolore voluptate magni cumque, officiis autem earum sapiente quidem quae dicta vel perferendis eius. Voluptatem, nesciunt.</p>
+                <div class="TextoComo">
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, exercitationem placeat esse laboriosam amet reprehenderit odio quisquam eum rerum nam illum similique veniam aspernatur maxime totam, corrupti nesciunt. Quaerat, dolorem!</p>
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci possimus veritatis facere nihil mollitia quas alias quam error reprehenderit, obcaecati, dolor a quidem, quasi eius modi cum pariatur magni tempora.</p>
+                    <img src="" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti sapiente totam a neque explicabo perferendis eligendi vel quibusdam? Voluptatum architecto unde quod cupiditate eveniet accusamus maiores delectus distinctio debitis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="caixaGrandeTela3">
+        <div class="caixaMediaQUem">
+            <div class="TextoQuem">
+                
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+<script>
+
+    // Captura do elemento com o ID "Main"
+    var mainElement = document.getElementById('Main');
+    
+    // Obtenção dos atributos de dados
+    var words = mainElement.getAttribute('data-words').split(',');
+    var delay = mainElement.getAttribute('data-delay');
+
+    // Função para animar o texto digitado
+    function typeWriter(text, i, fnCallback) {
+        // Verifica se o texto foi completamente exibido
+        if (i < (text.length)) {
+            // Adiciona um caractere ao texto
+            mainElement.innerHTML = text.substring(0, i+1) + '<span aria-hidden="true"></span>';
+            // Aguarda o atraso especificado e chama a função novamente para o próximo caractere
+            setTimeout(function() {
+                typeWriter(text, i + 1, fnCallback)
+            }, 100);
+        }
+        // Verifica se o texto foi completamente exibido e se há uma função de retorno de chamada
+        else if (typeof fnCallback == 'function') {
+            // Chama a função de retorno de chamada após o atraso
+            setTimeout(fnCallback, delay);
+        }
+    }
+
+    // Função para iniciar a animação de digitação
+    function StartTextAnimation(i) {
+        if (typeof words[i] == 'undefined') {
+            // Chama a função recursivamente para iniciar a animação novamente
+            setTimeout(function() {
+                StartTextAnimation(0);
+            }, 20); // Ajuste este valor para o tempo de pausa entre as animações
+        }
+        // Verifica se há texto para exibir
+        if (i < words.length) {
+            // Chama a função para exibir o texto atual na posição "i"
+            typeWriter(words[i], 0, function(){
+                // Chama a função recursivamente para exibir o próximo texto
+                StartTextAnimation(i + 1);
+            });
+        }
+    }
+
+    // Inicia a animação de digitação
+    StartTextAnimation(0);
+
+   window.addEventListener('scroll', function(){
+    var Navbar = document.getElementById('Panelinha');
+    var navbarHeight = avbar.offsetHeight;
+    var scrollPosition = window.scrollY;
+
+    if(scrollPosition >= navbarHeight){
+        Navbar.classList.add('fixed')
+    }else {
+        Navbar.classList.remove('fixed')
+    }
+
+
+   });
+</script>
