@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cadastro_usuario.css">
+</head>
+<body>
+    <div class="cadastro" id="cadastro">
+        <div class="paiCadastro">
+            <h1 class="h1Cadastro"> Cadastro Usuario </h1>
+            <span class="entradasCadastro">Nome</span> <input type="text" id="input_nome_user">
+            <span class="entradasCadastro">CPF</span> <input type="text" id="input_cpf_user">
+            <span class="entradasCadastro">Email</span> <input type="text" id="input_email_user">
+            <span class="entradasCadastro">Senha</span> <input type="text" id="input_senha_user">
+            <span class="entradasCadastro_confirmar">Confirmar senha</span> <input type="text" id="input_confirmar_user">
+           
+            <a href="#" class="a">Já tem cadastro? Faça seu login</a>
+
+            <a href="../login e cadastro usuário/login.html"><button class="botãoCadastro" onclick="cadastrarlogar()"> Cadastrar Usuario </button></a>
+        </div>
+
+    </div>
+
+    <div class="imagem">
+        <img src="./img/fundo_img (1).png" alt="">
+    </div>
+</body>
+</html>
+
+<script>
+    
+function cadastrarlogar(){
+    var nomeUser = input_nome_user.value
+    var cpfUser = input_cpf_user.value
+    var senhaUser = input_senha_user.value
+    var confirmarUser = input_confirmar_user.value
+
+    var indice_lista_nomeUser = lista_nomeMarca.indexOf(nomeUser);
+    var indice_lista_cpfUser = lista_cpfUser.indexOf(cpfUser);
+    var indice_lista_senhaUser = lista_senhaUser.indexOf(senhaUser);
+
+    if (nomeUser.length < 3 ||
+        nomeUser == '' ||
+        cpfUser.length < 13 ||
+        cpfUser == '' ||
+        senhaUser.length < 8 ||
+        senhaUser == '' ||
+        senhaUser != confirmarUser ||
+        confirmarUser == '') {
+
+        alert('Falha ao cadastrar o usuário!')
+
+    } else {
+
+        if (indice_lista_nomeUser == -1 ||
+            indice_lista_cpfUser == -1) {
+
+            lista_nomeUser.push(nomeUser);
+            lista_cpfUser.push(cpfUser);
+            alert('Cadastro de Usuário executado com Sucesso!');
+
+            LOGuser.style.display = 'block'
+            CADuser.style.display = 'none'
+
+        } else {
+
+            alert('Já existe um usuário cadastrado!')
+
+        }
+    }
+
+}
+</script>

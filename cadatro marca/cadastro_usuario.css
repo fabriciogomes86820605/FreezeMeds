@@ -7,25 +7,27 @@
 body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Adicionado para esconder a barra de rolagem horizontal */
+    overflow-x: hidden; 
+    overflow-y: hidden;
 }
 .cadastro {
-    width: 630px;
+    width: 730px;
     height: 695px;
     background-color: rgb(255, 255, 255);
-    float: right
+    float: right;
+    margin-top: -50px;
     
 }
 .imagem {
     display: flex;
     height: 695px;
-    width: 550px;
-    margin-right: 30px; /* Adicionado margem direita para manter a imagem visível */
+    width: 500px;
+    margin-right: 20px; /* Adicionado margem direita para manter a imagem visível */
 
 }
 
 .imagem img {
-    max-width: 170%; /* Ajustado para que a imagem não ultrapasse a largura do contêiner */
+    max-width: 150%; /* Ajustado para que a imagem não ultrapasse a largura do contêiner */
     height: auto;
 }
 .h1Cadastro{
@@ -34,7 +36,8 @@ body {
     font-style: normal;
     font-size: 49px;
     margin-bottom: 15px;
-    width: 387px;
+    white-space: nowrap; 
+
     
 }
 .paiCadastro{
@@ -58,11 +61,12 @@ body {
     font-size: 24px;
     background-color: #3b406d;
     width: 294px;
-    height: 62px;
+    height: 52px;
     border-radius: 15px;
     color: white;
     border-color: transparent;
     padding: 13px;
+  margin-top: 10%;
 
 }
 
@@ -71,14 +75,15 @@ input {
     background-color: #d9d9d9;
     border-color: transparent;
     position: relative;
-    padding: 3px;
-    margin-bottom: 15px;
+    padding: 15px;
+    margin-bottom: 25px;
     width: 408px;
     height: 40px;
     font-family: "ABeeZee", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: large;
+    margin-left: 50px;
 }
 
 .entradasCadastro{
@@ -86,7 +91,7 @@ input {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-    margin-right: 65%;
+    margin-right: 60%;
     
 }
 
@@ -95,5 +100,5 @@ input {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-    margin-right: 47%;
+    margin-right: 41%;
 }
