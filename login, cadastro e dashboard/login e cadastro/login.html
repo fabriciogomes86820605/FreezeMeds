@@ -25,7 +25,7 @@
 
             <a href="#" class="a" onclick="moveCadastro()">Não tem login? Faça seu cadastro</a>
 
-          <a href="../oficialdashboard.html"><button class="botão" onclick="logar()"> Login </button></a> 
+          <a href="oficialdashboard.html"><button class="botão" onclick="logar()"> Login </button></a> 
         </div>
 
     </div>
@@ -43,7 +43,7 @@
 
             <a href="#" class="a" onclick="moveLogin()">Já tem cadastro? Faça seu login</a>
 
-            <a href="../login e cadastro usuário/login.html"><button class="botãoCadastro" onclick="CadastrarMarca()">Cadastrar Marca </button></a>
+            <button class="botãoCadastro" onclick="CadastrarMarca()">Cadastrar Marca </button>
         </div>
 
     </div>
@@ -89,6 +89,7 @@
                 tel2 == '') {
 
                 alert('Falha ao cadastrar a Marca!');
+                return false;
             } else {
                 if (indice_lista_nomeMarca == -1 ||
                     indice_lista_emailMarca == -1 ||
@@ -97,8 +98,12 @@
                     lista_nomeMarca.push(nomeMarca);
                     lista_cnpjMarca.push(cnpjMarca);
                     alert('Cadastro de Marca executado com Sucesso!');
+                    window.location.href = "cadastro_usuario.html";
+                    return true;
+                
                 } else {
                     alert('Essa marca já está cadastrada!');
+                    return false;
                 }
             }
         }
@@ -123,12 +128,17 @@
             var cpfLogin = input_cpfLogin.value;
             var senhaLogin = input_senhaLogin.value;
 
-            if (lista_cpfUser != -1 && lista_cnpjMarca != -1 && lista_emailMarca != -1 && lista_senhaUser != -1) {
+            if (lista_cpfUser == -1 && lista_cnpjMarca == -1 && lista_emailMarca == -1 && lista_senhaUser == -1) {
                 alert('Login executado com sucesso!');
+                window.location.href = "oficialdashboard.html";
+                    return true;
                 LOGuser.style.display = 'none';
                 Dash.style.display = 'block';
+                
+
             } else {
                 alert('Falha ao efetuar o login!');
+                return false;
             }
         }
     </script>

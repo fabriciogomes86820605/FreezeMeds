@@ -27,7 +27,7 @@ body {
 }
 
 .imagem img {
-    max-width: 150%; /* Ajustado para que a imagem não ultrapasse a largura do contêiner */
+    max-width: 170%; /* Ajustado para que a imagem não ultrapasse a largura do contêiner */
     height: auto;
 }
 .h1Cadastro{
@@ -101,4 +101,9 @@ input {
     font-style: normal;
     font-size: 20px;
     margin-right: 41%;
+}
+
+a{
+
+text-decoration: none;
 }

@@ -15,13 +15,12 @@
             <h1 class="h1Cadastro"> Cadastro Usuario </h1>
             <span class="entradasCadastro">Nome</span> <input type="text" id="input_nome_user">
             <span class="entradasCadastro">CPF</span> <input type="text" id="input_cpf_user">
-            <span class="entradasCadastro">Email</span> <input type="text" id="input_email_user">
             <span class="entradasCadastro">Senha</span> <input type="text" id="input_senha_user">
             <span class="entradasCadastro_confirmar">Confirmar senha</span> <input type="text" id="input_confirmar_user">
            
-            <a href="#" class="a">Já tem cadastro? Faça seu login</a>
+            <a href="login.html" class="a">Já tem cadastro? Faça seu login</a>
 
-            <a href="../login e cadastro usuário/login.html"><button class="botãoCadastro" onclick="cadastrarlogar()"> Cadastrar Usuario </button></a>
+            <button class="botãoCadastro" onclick="cadastrarlogar()"> Cadastrar Usuario </button>
         </div>
 
     </div>
@@ -34,6 +33,12 @@
 
 <script>
     
+        var lista_nomeMarca = [];
+        var lista_cnpjMarca = [];
+        var lista_emailMarca = [];
+        var lista_cpfUser = [];
+        var lista_nomeUser = [];
+        var lista_senhaUser = [];
 function cadastrarlogar(){
     var nomeUser = input_nome_user.value
     var cpfUser = input_cpf_user.value
@@ -53,7 +58,9 @@ function cadastrarlogar(){
         senhaUser != confirmarUser ||
         confirmarUser == '') {
 
-        alert('Falha ao cadastrar o usuário!')
+        alert('Falha ao cadastrar o usuário!');
+        return false;
+
 
     } else {
 
@@ -63,13 +70,16 @@ function cadastrarlogar(){
             lista_nomeUser.push(nomeUser);
             lista_cpfUser.push(cpfUser);
             alert('Cadastro de Usuário executado com Sucesso!');
-
+            window.location.href = "login.html";
+                    return true;
             LOGuser.style.display = 'block'
             CADuser.style.display = 'none'
+            
 
         } else {
 
-            alert('Já existe um usuário cadastrado!')
+            alert('Já existe um usuário cadastrado!');
+            return false;
 
         }
     }
