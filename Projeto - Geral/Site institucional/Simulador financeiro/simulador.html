@@ -3,112 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreezeMeds</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-
-    <header>
-        <nav class="nav-bar">
-            <div class="item-1">
-                <div class="logo-nav">
-                    <img class="img" src="freezemedslogo.png" alt="">
-                </div>
-            </div>
-            <div class="item-2">
-                <a href="#" class="link">Inicio</a>
-                <a href="#" class="link">Quem Somos</a>
-                <a href="#" class="link">Projeto</a>
-                <a href="#" class="link">Equipe</a>
-            </div>
-        </nav>
-    </header>
-
-    <div class="father">
-        <div class="child-left">
-            <h1> <i> Simulador Financeiro </i> </h1>
-
-            <p>Nome do Medicamento:</p>
-            <input type="text" id="input_nomeMd" class="inputs">
-        
-            <p>Temperatura Ideal do Medicamento:</p>
-            <input type="text" id="input_idealMd" class="inputs">
-        
-            <p>Temperatura Atual da Máquina:</p>
-            <input id="input_tempAT" type="text" class="inputs"> 
-        
-            <p>Quantidade de medicamentos no freezer - (unidade): </p>
-            <input id="input_qtdMED" type="text" class="inputs"> 
-        
-            <p>Custo do medicamento:</p>
-            <input id="input_custoMED" type="text" class="inputs"> <br>
-        
-            <button onclick="calc()" class="butao"> Calcular prejuízo </button> <br>
-        </div>
-        <div class="child-right">
-            <h2>Resultado:</h2>
-            <p id="divMsg"></p>
-            <p id="divResul"></p>
-        </div>
+    <div>
+    <p>Informe a quantidade de medicamentos na câmara</p>
+    <input type="text" id="input_qtdMed"> <br>
+    <p>Informe o preço unitário de cada medicamento na câmara</p>
+    <input type="text" id="input_precoMed"> <br> <br>
+    <button onclick="calc()">Calcular</button> <br><br>
     </div>
-    
+    <div id="div_msg">
+
+    </div>
 </body>
 </html>
 
 <script>
-     // Declaramos as variaveis globais
-     var tempAT = 0;
-    var qtdMED = 0;
-    var custoMED = 0;
-    var tempIdeal = 0;
-
     function calc() {
-        var nomeMd = input_nomeMd.value;
+        var qtdMed = Number(input_qtdMed.value);
+        var medPperda = qtdMed * 9/100;
+        var medPperda1 = qtdMed - medPperda;
+        var medPperda2 = qtdMed - medPperda1;
+        var precoMed = Number(input_precoMed.value);
+        var totalP = precoMed * medPperda1;
+        var prcnt = qtdMed / medPperda1;
+        var total = qtdMed * precoMed;
+        var totalPerda = total - totalP;
 
-        // Estamos chamando os valores inseridos em cada input
-        tempAT = Number(input_tempAT.value);
-        qtdMED = Number(input_qtdMED.value);
-        custoMED = Number(input_custoMED.value);
-        tempIdeal = Number(input_idealMd.value);
-        
-        // Calcular o valor total dos medicamentos e a porcentagem
-        var diferencaTemp = tempAT - tempIdeal;
-        var porcentagem = (diferencaTemp / tempIdeal) * 100;
-        var valorTotal = qtdMED * custoMED;
-
-        // Mensagem de resumo de todos os dados fornecidos
-        divResul.innerHTML = `
-        Nome do medicamento: ${nomeMd} <br>
-        Temperatura Ideal: ${tempIdeal} <br>
-        Temperatura do Freezer: ${tempAT} <br>
-        Quantidade de Medicamento no freezer: ${qtdMED} <br>
-        Valor do Medicamento: ${custoMED} <br>
-        `;
-
-        // Sistema de decisão onde caso a temperatura atual for maior que a ideal vai mostrar uma mensagem
-        if (tempAT > tempIdeal){
-            divMsg.innerHTML = `
-            Com ${qtdMED} do medicamento ${nomeMd}, a temeperatura atual de ${tempAT}ºC, e o custo de R$${custoMED} por unidade, 
-            a temperatura está ${porcentagem}% acima do ideal,
-            o prejuizo estimado será de R$${valorTotal}
-            `;
-        } else {
-            // caso for igual vai mostrar outro tipo de mensagem
-            if (tempAT == tempIdeal){
-                divMsg.innerHTML = `
-                Com ${qtdMED} do medicamento ${nomeMd}, a temeperatura atual de ${tempAT}ºC, e o custo de R$${custoMED} por unidade, 
-                a temperatura está ideal,
-                tendo nenhum prejuizo estimado.
-                `;
-            } else{
-                // Se não for maior ou nem igual vai mostrar a mensagem de abaixo do ideal
-                divMsg.innerHTML = `
-                Com ${qtdMED} do medicamento ${nomeMd}, a temeperatura atual de ${tempAT}ºC, e o custo de R$${custoMED} por unidade, 
-                a temperatura está ${porcentagem}% abaixo do ideal,
-                o prejuizo estimado será de R$${valorTotal}.
-                `;
-            }
+        if (qtdMed <= 0) {
+           alert (`Insira um número de medicamentos válidos`);
+        } else if(precoMed <= 0) {
+            alert (`Insira um preço de medicamentos válidos`);
         }
+
+        if (qtdMed > 0 && precoMed > 0) {
+            div_msg.innerHTML = `Obrigado por consultar o nosso simulador financeiro, com base nos dados que você nos informou, o total em Reais que você perdeu é <b>R$${totalPerda}</b>, e a quantidade de medicamentos perdidos é <b>${medPperda2}</b>. Além disso, a porcentagem de perda desses medicamentos pode ser de até <b>${prcnt}%</b>`;
+        }
+    
     }
 </script>
