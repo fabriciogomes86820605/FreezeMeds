@@ -109,15 +109,8 @@
                 <h3> Como é feito: </h3>
                 <p>
                     Os calculos foram feitos com base nos dados de nossas pesquisas,
-                    em que 15% dos medicamentos são perdidos por conta do mau armazenamento de medicamentos fizemos este
-                    calculo com a (Quantidade de medicamentos informadas pelo usuário *
-                    o Preço do medicamento informado também pelo usuário (que é o total)), (Assim fazemos o calculo da
-                    perda de 15% onde
-                    pegamos a quantidade de medicamentos * os 15% de perdas dividido por 100 pois se trata de uma
-                    porcentagem de perdas (que é o total1)),
-                    com isso conseguimos pegar o Lucro real do usuário que é o total - o total1. Depois fazemos a
-                    porcentagem de perda do
-                    usuário que é o Preço do medicamento * o total1, Assim concluimos o calculo do simulador financeiro
+                    em que 9% dos medicamentos são perdidos por conta do mau armazenamento de medicamentos 
+                    segundo a BBC News, o calculo é feito com a quantidade de medicamentos informada pelo usuário - 9% (o qual faz parte dos dados da pesquisa), com isso fazemos o calculo deste valor menos a quantidade de medicamentos digitadas pelo usuário assim podemos obter o real número de medicamentos perdidos por conta do mau armazenamento. Após estes calculos feitos podemos fazer o calculo do valor real dos medicamentos que é o preço dos medicamentos vezes a quantidade de medicamentos perdida, depois disso podemos calcular a porcentagem de perda de medicamentos que é a quantidade de medicamentos informada pelo usuário dividida pela quantidade já aplicada com sua perda.
                 </p>
 
 
@@ -129,11 +122,8 @@
 
                     <h1> Calculadora Financeira </h1>
 
-                    <p>Insira seu nome:</p>
-                    <input type="text" id="input_nome" class="inputs"> <br>
-
                     <p>Preço do medicamento por unidade:</p>
-                    <input id="input_undMed" type="text" class="inputs"> <br>
+                    <input id="input_precoMed" type="text" class="inputs"> <br>
 
                     <p>Quantidade de medicamento:</p>
                     <input id="input_qtdMed" type="text" class="inputs"> <br>
@@ -181,38 +171,25 @@
 </html>
 <script>
     function calc() {
-        div_msg.innerHTML = ``
-        var nome = input_nome.value;
-        var precoMed = Number(document.getElementById('input_undMed').value);
-        var qtdMed = Number(document.getElementById('input_qtdMed').value);
-        var perdaFixa = 15 / 100;
+        var qtdMed = Number(input_qtdMed.value);
+        var medPperda = qtdMed * 9/100;
+        var medPperda1 = qtdMed - medPperda;
+        var medPperda2 = qtdMed - medPperda1;
+        var precoMed = Number(input_precoMed.value);
+        var totalP = precoMed * medPperda1;
+        var prcnt = qtdMed / medPperda1;
         var total = qtdMed * precoMed;
-        var total1 = (qtdMed * perdaFixa) / 100;
-        var totalReal = total - total1;
-        var porcentagem = (precoMed * total1);
+        var totalPerda = total - totalP;
 
-        div_msg.innerHTML += `
-        
-        <h3> Como é feito: </h3>
-              
-                    Os calculos foram feitos com base nos dados de nossas pesquisas,
-                    em que 15% dos medicamentos são perdidos por conta do mau armazenamento de medicamentos fizemos este
-                    calculo com a (Quantidade de medicamentos informadas pelo usuário *
-                    o Preço do medicamento informado também pelo usuário (que é o total)), (Assim fazemos o calculo da
-                    perda de 15% onde
-                    pegamos a quantidade de medicamentos * os 15% de perdas dividido por 100 pois se trata de uma
-                    porcentagem de perdas (que é o total1)),
-                    com isso conseguimos pegar o Lucro real do usuário que é o total - o total1. Depois fazemos a
-                    porcentagem de perda do
-                    usuário que é o Preço do medicamento * o total1, Assim concluimos o calculo do simulador financeiro
-               
-        
-        <br>      <h3> Resultado </h3> <br>Olá, ${nome}. Obrigado por consultar nosso sistema de simulador financeiro,
-         com base nas informações constatadas, se tem a informação de que seu faturamento total é de R$${totalReal}
-        e a porcentagem de perda por conta de mau armazenamento dos medicamentos pode ser de até ${porcentagem.toFixed(0)}%,
-         com isso para evitar esta perda de lucro com seus produtos, adquira o nosso sistema de monitoramento de temperatura
-          de medicamentos termolábeis (Freezeway). <br><br>`;
+        if (qtdMed <= 0) {
+           alert (`Insira um número de medicamentos válidos`);
+        } else if(precoMed <= 0) {
+            alert (`Insira um preço de medicamentos válidos`);
+        }
 
-
+        if (qtdMed > 0 && precoMed > 0) {
+            div_msg.innerHTML = `Obrigado por consultar o nosso simulador financeiro, com base nos dados que você nos informou, o total em Reais que você perdeu é <b>R$${totalPerda}</b>, e a quantidade de medicamentos perdidos é <b>${medPperda2}</b>. Além disso, a porcentagem de perda desses medicamentos pode ser de até <b>${prcnt}%</b>`;
+        }
+    
     }
 </script>
