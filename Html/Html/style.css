@@ -1,13 +1,15 @@
-body{
+body {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
-.Mae{
+
+.Mae {
     display: flex;
     flex-direction: column;
 }
- #Panelinha {
+
+#Panelinha {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,9 +26,10 @@ body{
     position: sticky;
     padding: 0px;
     top: 0px;
-    
+
 }
-.Container{
+
+.Container {
     display: flex;
     justify-content: center;
     align-items: end;
@@ -35,19 +38,19 @@ body{
     flex-direction: row;
 }
 
-#Panelinha ul{
-   
+#Panelinha ul {
+
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 25px;
-   
+
 }
 
-#Panelinha li{
+#Panelinha li {
     margin-right: 30px;
-    float:  left; 
-} 
+    float: left;
+}
 
 #Panelinha a {
     color: rgb(0, 0, 0);
@@ -55,7 +58,7 @@ body{
     box-shadow: 15px;
 }
 
-.ConteudoAbertura{
+.ConteudoAbertura {
     display: flex;
     justify-content: center;
     font-size: 40px;
@@ -65,86 +68,257 @@ body{
     background-color: white;
 
 }
-.TextoAbertura{
+
+.TextoAbertura {
     display: flex;
     justify-content: center;
     height: 246px;
     font-size: 46px;
 }
-.CaixaGrandeTela1{
+
+.CaixaGrandeTela1 {
     display: flex;
     justify-content: center;
+    background-image: url(./Imagens/ComoFunciona/background.png);
+    background-repeat: none;
+    background-size: cover;
     font-size: 32px;
     text-align: center;
     align-items: center;
     height: 1000px;
+
 }
-.CaixaMenor{
-    text-align: start;
+
+.CaixaMedia {
+    background-color: #00000061;
+     color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
-.ConteudoCaixa{
+
+.CaixaMenor {
+    text-align: center;
+    display: flex;
+}
+
+.ConteudoCaixa {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
+
 .ConteudoCaixa p {
-    font-size: 25px;
+    font-size: 30px;
 }
-.CaixaMae{
+
+.CaixaMae {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.ConteudoImagem{
+
+.ConteudoImagem {
     display: flex;
     height: 150px;
     width: 150px;
 }
-    .ContainerMaior1{
-        display: flex;
-        height: 100%;
-        width: 100%;
-        background-image: url(./Imagens/fotoBackgroundabertura.png);
-        background-size: cover;
-    }
 
-    .CaixaMenor1{
-        display: flex;
-        height: 930px;
-        width: 1920px;
-        align-items: center;
-        text-align: center;
-        background-color: #171b4e92;
-        flex-direction: column;
-    }
-    .CaixaMenorMenor1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        flex-direction: row;
-    }
-    .CaixaSpan{
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-    }
+.ContainerMaior1 {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-image: url(./Imagens/fotoBackgroundabertura.png);
+    background-size: cover;
+}
 
-    .TextoTeste {
-        color: rgb(166, 207, 253);
-        font-size: 100px;
-    }
-    .TextoTeste2 {
-        font-size: 100px;
-        margin: 15px;
-        color: white;
-    }
+.CaixaMenor1 {
+    display: flex;
+    height: 958px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: #171b4e92;
+    flex-direction: column;
+}
 
-    #Panelinha .fixed {
-        position: sticky;
-        top: 0%;
-        left: 0%;
-        
-    }
+.CaixaMenorMenor1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: row;
+}
+
+.CaixaSpan {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.TextoTeste {
+    color: rgb(166, 207, 253);
+    font-size: 100px;
+}
+
+.TextoTeste2 {
+    font-size: 100px;
+    margin: 15px;
+    color: white;
+}
+
+#Panelinha .fixed {
+    position: sticky;
+    top: 0%;
+    left: 0%;
+
+}
+
+.CaixaGrandeTela2 {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.CaixaMediaComo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.TextoComo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.CaixaConteudoText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ImagemVisao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+}
+
+.ConteudoTextoSobre {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ConteudoTextoSobre p {
+    font-size: 25px;
+    width: 570px;
+    padding: 0%;
+}
+
+.textoVisao{
+    color: white;
+    
+}
+
+.ConteudoTextoSobre h1 {
+    font-size: 35px;
+}
+
+.TituloQuemSomos {
+    display: flex;
+    flex-direction: column;
+}
+
+.TituloQuemSomos h1 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+
+.TituloQuemSomos p {
+    font-size: 28px;
+}
+
+.ImagemEquipe {
+    height: 600px;
+    width: 700px;
+}
+
+.CaixaEquipe {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+.CaixaMaiorSimulador{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    
+}
+.CaixaPaiSimulador1{
+    display: flex;
+    flex-direction: row;
+
+}
+.CaixaMediaSimulador{
+    display: flex;
+    height: 880px;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: first baseline;
+}
+.CaixaMenorSimulador{
+    display: flex;
+    background-image: url(./Imagens/SimuladorFinaceiro/FotoSimualador.png);
+    background-repeat: no-repeat;
+    width: 930px;
+    height: 881px;
+    background-size: cover;
+}
+.CaixaSimulador{
+    height: 600px;
+    width: 620px;
+    border: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 26px;
+    border: 10px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.CaixaSimulador h1{
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+.CaixaSimulador p {
+    font-size: 25px;
+    width: 620px;
+    height: auto;
+}
+.BotaoTenteVoce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    height: 50px;
+    background-color:#DDDDDD;
+    border-radius: 15px;
+    border: 0px;
+}
