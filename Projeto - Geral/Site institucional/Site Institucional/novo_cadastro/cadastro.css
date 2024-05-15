@@ -140,3 +140,8 @@ select {
     color: #000;
     cursor: pointer;
   }
+
+  .pix{
+    color: #fff;
+    font-style: bold;
+  }

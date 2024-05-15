@@ -157,7 +157,7 @@
                 <h2> PAGAMENTO EM PIX </h2>
     
                 <p>Copie e cole o número a seguir no aplicativo do banco utilizado pela empresa e efetue o pagamento</p><br>
-                <div id="pixMensagem"></div>
+                <div id="pixMensagem" class="pix"></div>
                 <br><br>
                 <p>Nós confirmaremos automaticamento a efetuação do pagamento!</p>
     
@@ -179,9 +179,9 @@
             <br>
             <input type="text" id="input_cpf_user" placeholder="CPF">
             <br>
-            <input type="text" id="input_senha_user" placeholder="Senha">
+            <input type="password" id="input_senha_user" placeholder="Senha">
             <br>
-            <input type="text" id="input_confirmar_user" placeholder="Confirmar Senha">
+            <input type="password" id="input_confirmar_user" placeholder="Confirmar Senha">
             <br><br>
             <button onclick="CadastrarUser()">Cadastrar</button>
             <br><br>
@@ -425,17 +425,16 @@
         var cpfLogin = input_cpfLogin.value;
         var senhaLogin = input_senhaLogin.value;
 
-        if (lista_cpfUser != -1 && lista_cnpjMarca != -1 && lista_emailMarca != -1 && lista_senhaUser != -1) {
+        var indiceCpf = lista_cpfUser.indexOf(cpfLogin);
 
-            alert('Login executado com sucesso!')
-            LOGuser.style.display = 'none'
-            Dash.style.display = 'block'
+        var indiceEmail = lista_emailMarca.indexOf(emailLogin);
 
-
+        if (indiceCpf !== -1 && indiceEmail !== -1 && lista_senhaUser[indiceCpf] === senhaLogin) {
+            alert('Login executado com sucesso!');
+            LOGuser.style.display = 'none';
+            Dash.style.display = 'block';
         } else {
-
-            alert('Falha ao efetuar o login!')
-
+            alert('Falha ao efetuar o login!');
         }
 
     }
