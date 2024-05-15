@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Site Constitucional</title>
+</head>
+
+<body>
+    <header>
+
+        <div class="nav_bar">
+
+            <img class="logo" src="img/logooficial-removebg-preview.png" alt="">
+            <div class="botoes">
+
+                <a href="#home">
+                    <img class="img_botão" src="img/casa.png" alt="">
+                </a>
+                <a href="#Calculadora">
+                    <img class="img_botão" src="img/calculadora.png" alt="">
+                </a>
+
+
+                <a href="#Contato">
+                    <img class="img_botão" src="img/atendimento-ao-cliente.png" alt="">
+                </a>
+                
+                    <p>|</p>
+               
+                <a href="">
+                    <img class="img_botão" src="img/do-utilizador.png" alt="">
+                </a>
+
+
+            </div>
+        </div>
+
+    </header>
+    <div class="pai">
+
+        <section id="home">
+
+
+            <div class="apresentação">
+                <h3>Monitoramento Prático</h3>
+                <div class="texto">
+
+                    <p>Bem vindo ao FreezeMeds, somos especialistas em trazer os melhores produtos de monitoramento
+                        de temperatura para câmaras de resfriamento de remédios termolabeis. </p>
+                </div>
+        </section>
+    </div>
+    <div>
+        <img class="imagem"
+            src="img/medicina.jpg"
+            alt="">
+    </div>
+
+
+    <div class="sobre_nos">
+        <img class="img_sobre_nos" src="img/temperatura.png" alt="">
+
+
+
+        <div class="texto">
+            <h3>Quem somos?</h3>
+            <p>Nós somos o FreezeMeds, um grupo que visa não só o resultado final
+                mas a qualidade do processo no monitoramento.
+                Tendo como o principal foco
+                o monitorar a temperatura de remédios termolábeis em câmaras de resfriamento.</p>
+        </div>
+
+
+    </div>
+
+    <div class="div_contexto">
+        <div class="contexto">
+            <h3>O que é o FreezeMeds?</h3>
+            <p>Após algumas perquisas indentificamos uma falha no mercado, aonde as marcas de remédios termolábeis
+                devem monitorar o cuidado do seus produtos vendido nas farmacias. </p>
+
+        </div>
+        <div class="divisao">
+
+        </div>
+        <div class="contexto">
+            <h3>Como Funciona?</h3>
+            <p>
+                Nós utilizamos sensores de temperatura instalados em câmaras de conservação para monitorar e controlar a
+                temperatura dos medicamentos. Coletamos esses dados e os processamos para fornecer uma visualização
+                clara e prática por meio de nossa dashboard, garantindo que os medicamentos sejam mantidos em condições
+                ideais de temperatura. </p>
+
+        </div>
+    </div>
+
+    <div class="div_por_que_comprar">
+        <h3>Por que devo comprar ?</h3>
+        <img class="img_por_que" src="img/Dinheiro.png" alt="">
+    </div>
+
+    <section id="Calculadora">
+        <div class="div_calculadora">
+
+            <div id="div_msg" class="resultado">
+                <h3> Como é feito: </h3>
+                <p>
+                    Os calculos foram feitos com base nos dados de nossas pesquisas,
+                    em que 9% dos medicamentos são perdidos por conta do mau armazenamento de medicamentos 
+                    segundo a BBC News, o calculo é feito com a quantidade de medicamentos informada pelo usuário menos 9% (o qual faz parte dos dados da pesquisa), com isso fazemos o calculo deste valor menos a quantidade de medicamentos digitadas pelo usuário assim podemos obter o real número de medicamentos perdidos por conta do mau armazenamento. Após estes calculos feitos podemos fazer o calculo do valor real dos medicamentos que é o preço dos medicamentos vezes a quantidade de medicamentos perdida, depois disso podemos calcular a porcentagem de perda de medicamentos que é a quantidade de medicamentos informada pelo usuário dividida pela quantidade já aplicada com sua perda.
+                </p>
+
+
+            </div>
+
+            <div class="container_calc">
+                <div class="calculadoradentro">
+
+
+                    <h1> Calculadora Financeira </h1>
+
+                    <p>Preço do medicamento por unidade:</p>
+                    <input id="input_precoMed" type="text" class="inputs"> <br>
+
+                    <p>Quantidade de medicamento:</p>
+                    <input id="input_qtdMed" type="text" class="inputs"> <br>
+
+                    <button class="button" onclick="calc()"> Calcular </button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        </div>
+
+
+    </section>
+    <hr>
+<section id="Contato">
+
+    <div class="final_pagina">
+
+        <img class="logo" src="img/logooficial-removebg-preview.png" alt="">
+
+        <div class="botao_final">
+<p>
+    Contato:
+</p>
+            <p>freezemeds@gmail.com</p>
+
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    function calc() {
+        var qtdMed = Number(input_qtdMed.value);
+        var medPperda = qtdMed * 9/100;
+        var medPperda1 = qtdMed - medPperda;
+        var medPperda2 = qtdMed - medPperda1;
+        var precoMed = Number(input_precoMed.value);
+        var totalP = precoMed * medPperda1;
+        var prcnt = qtdMed / medPperda1;
+        var total = qtdMed * precoMed;
+        var totalPerda = total - totalP;
+
+        if (qtdMed <= 0) {
+           alert (`Insira um número de medicamentos válidos`);
+        } else if(precoMed <= 0) {
+            alert (`Insira um preço de medicamentos válidos`);
+        }
+
+        if (qtdMed > 0 && precoMed > 0) {
+            div_msg.innerHTML = `Obrigado por consultar o nosso simulador financeiro, com base nos dados que você nos informou, o total em Reais que você perdeu é <b>R$${totalPerda}</b>, e a quantidade de medicamentos perdidos é <b>${medPperda2}</b>. Além disso, a porcentagem de perda desses medicamentos pode ser de até <b>${prcnt}%</b>`;
+        }
+    
+    }
+</script>
