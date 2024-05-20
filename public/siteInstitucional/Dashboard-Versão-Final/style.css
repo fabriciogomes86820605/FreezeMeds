@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+
+}
+
+body {
+    display: flex;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.nav_bar {
+    width: 200px;
+    position: fixed;
+height: 120vh;
+    /* viewport */
+    /* position: sticky; */
+    /*O position sticky,
+que em português significa pegajoso ou colado,
+é parecido com o fixed,
+porém a sua diferença é que,
+em vez dele ficar fixo em relação à tela,
+ele fica fixo em relação ao rolamento da página. */
+    background-color: #0f33b5;
+    color: #ffff;
+    /* overflow: hidden; */
+    /* transition: all 0.5s linear; */
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+
+
+}
+
+svg {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.menu li {
+    display: flex;
+    padding: 1rem;
+    width: 70%;
+    height: 30px;
+    border-radius: 8px;
+    /* transition: all 0.5 ease-in-out; */
+    /* A propriedade transition no CSS é usada para criar animações suaves quando os valores das propriedades CSS mudam.
+     O valor transition: all 0.5s ease-in-out; especifica uma transição que afeta todas as propriedades que mudarem, tem uma 
+     duração de 0.5 segundos e usa uma função de tempo ease-in-out para a transição. */
+}
+
+.menu li:hover {
+    background-color: #615d5d65;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+
+}
+
+.sair {
+   display: flex;
+   margin-top: 297px;
+}
+
+body {
+    background-color: #e3e0e0;
+}
+
+.header {
+    display: flex;
+    margin-left: 220px;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    margin-top: 20px;
+    width: 78%;
+    height: 50px;
+    padding: 20px 20px 20px 20px;
+    flex-direction: row;
+}
+.pai{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudo_header {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card_container{
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    margin-left: 220px;
+    width: 76%;
+    height: 30vh;
+    background-color: #ffffff;
+}
+.titulo_card{
+margin-left: 20px;
+margin-top: 20px;
+font-size:15px;
+}
+.container_grafico{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 220px;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px ;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+align-items: center;
+}
+.container_grafico p{
+        font-size: 20px;
+
+}
+.container_grafico_barras{
+    display: flex;
+    background-color: #ffffff;
+    margin-left: 220px;
+    flex-direction: column;
+    padding: 20px ;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+}
