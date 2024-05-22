@@ -19,7 +19,7 @@ body {
 .nav_bar {
     width: 200px;
     position: fixed;
-height: 120vh;
+    height: 100vh;
     /* viewport */
     /* position: sticky; */
     /*O position sticky,
@@ -75,8 +75,8 @@ svg {
 }
 
 .sair {
-   display: flex;
-   margin-top: 297px;
+    display: flex;
+    margin-top: 50vh;
 }
 
 body {
@@ -88,29 +88,65 @@ body {
     margin-left: 220px;
     background-color: #ffffff;
     border-radius: 10px;
-
+;
     margin-top: 20px;
     width: 78%;
     height: 50px;
     padding: 20px 20px 20px 20px;
     flex-direction: row;
 }
-.pai{
+
+.pai {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
 }
 
+.card {
+    align-items: row;
+}
+
 .conteudo_header {
     width: 100%;
     height: 100%;
-    
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
-.card_container{
+.farmacias{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+ 
+  
+
+}
+.farmacias select{
+   width: 200px;
+   text-align: center;
+   height: 40px;
+   border-radius: 10px;
+}
+.metricas {
+    display: flex;
+    width: 80%;
+flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+.metricas li {
+    list-style-type: none;
+    width: 200px;
+    text-align: center;
+    background-color: #e3e0e031;
+    /* border: solid rgba(0, 0, 0, 0.429); */
+    border-radius: 10px;
+}
+
+.card_container {
     display: flex;
     margin: 10px;
     border-radius: 10px;
@@ -119,35 +155,75 @@ body {
     height: 30vh;
     background-color: #ffffff;
 }
-.titulo_card{
-margin-left: 20px;
-margin-top: 20px;
-font-size:15px;
+
+.titulo_card {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 15px;
 }
-.container_grafico{
+.container_cards{
+    display: flex;
+align-items: center;
+    flex-direction: column;
+    width: 37%;
+    margin-left: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+
+}
+.container_2{
+    display:flex ;
+
+margin-bottom: 10px;
+
+}
+.container_cards li{
+    list-style-type: none;
+
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 190px;
+    align-items: center;
+    height: 108px;
+    border-radius: 10px;
+    background-color:rgb(255, 255, 255) ;
+}
+.card p{
+    width: 190px;
+    text-align: center;
+}
+.container_grafico {
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 220px;
     flex-direction: column;
     background-color: #ffffff;
-    padding: 20px ;
+    padding: 20px;
     width: 500px;
     height: 250px;
     border-radius: 10px;
-align-items: center;
+    align-items: center;
 }
-.container_grafico p{
-        font-size: 20px;
+
+.container_grafico p {
+    font-size: 20px;
 
 }
-.container_grafico_barras{
+
+.container_grafico_barras {
     display: flex;
+    text-align: center;
     background-color: #ffffff;
     margin-left: 220px;
     flex-direction: column;
-    padding: 20px ;
+    padding: 20px;
     width: 500px;
     height: 250px;
     border-radius: 10px;
+}
+.container_grafico_barras p {
+    font-size: 20px;
 }
