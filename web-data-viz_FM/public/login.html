@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="preconnect" href=https://fonts.googleapis.com>
+
+    <link rel="preconnect" href=https://fonts.gstatic.com crossorigin>
+
+    <link href=https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Sora:wght@100..800&display=swap
+
+        rel="stylesheet">
+</head>
+<link rel="stylesheet" href="./css/StyleLogin.css">
+<body>
+<div class="ContainerMae">
+    <div class="ContainerPai">
+        <div class="ConteudoCadastro">
+            <h1>Login</h1>
+
+            <div class="InputsCadastro">
+                <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Email</p>
+                <input id="input_nome" class="input" type="text">
+                <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Senha</p>
+                <input id="input_cpnj" class="input" type="text">
+                
+            <p style="display: flex; justify-content: flex-start; align-items: center; width: 90%; font-size: 20px;">Não tem conta? <a href="cadastro2.0.html" >Faça seu cadastro!</a></p>
+            <button class="Btn">Fazer Login</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
