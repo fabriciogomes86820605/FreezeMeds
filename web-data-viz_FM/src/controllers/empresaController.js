@@ -1,5 +1,4 @@
-var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+var empresaModel = require("../models/empresaModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -11,7 +10,7 @@ function autenticar(req, res) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
 
-        usuarioModel.autenticar(email, senha)
+        empresaModel.autenticar(email, senha)
             .then(
                 function (resultadoAutenticar) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
@@ -53,8 +52,8 @@ function cadastrar(req, res) {
         res.status(400).send("Sua empresa está undefined!");
     } else {
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, cnpj)
+        // Passe os valores como parâmetro e vá para o arquivo empresaModel.js
+        empresaModel.cadastrar(nome, email, senha, cnpj)
             .then(
                 function (resultado) {
                     res.json(resultado);
