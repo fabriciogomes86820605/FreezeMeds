@@ -6,54 +6,73 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+create database Sprint3;
+use Sprint3;
 
-USE aquatech;
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14)
+create table Marca (
+
+idMarcaRemedio int primary key auto_increment,
+nomeMarca varchar (45),
+cnpjMarca char(14),
+emailMarca varchar(50),
+senhaMarca varchar(40),
+telMarca1 char(11),
+telMarca2 char(11)
+
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table Compra (
+
+idCompra int primary key auto_increment,
+qtdCamara char(4),
+dataEntrega date,
+fkMarca int,
+constraint fkMarcaCompra foreign key (fkMarca)
+references Marca (idMarcaRemedio)
+
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+create table usuario (
+
+idUsuario int primary key auto_increment,
+nomeUsuario varchar (45),
+emailUsuario varchar(45),
+senhaUsuario varchar(45),
+cpf char(11),
+administrador char(3),
+fkMarca int,
+constraint fkMarcaUsuario foreign key (fkMarca)
+references Marca (idMarcaRemedio),
+constraint ChkAdmin check (administrador in ('sim','não'))
+
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table Manutencao (
+
+idManutencao int primary key auto_increment,
+dataPedido date,
+dataConcerto date,
+descricao varchar (400)
+
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+create table Sensor (
+
+idSensor int primary key auto_increment,
+nomeSensor varchar (45)
+
 );
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
+create table Dados (
+
+idDados int auto_increment,
+fkSensor int,
+temperatura float,
+registroData datetime default current_timestamp,
+constraint ChaveCompostaDados primary key (idDados, fkSensor),
+constraint fkDadosSensor foreign key (fkSensor)
+references Sensor (idSensor)
+
+);

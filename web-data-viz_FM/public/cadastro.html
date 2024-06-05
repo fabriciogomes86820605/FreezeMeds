@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreezeMeds | Cadastro</title>
     <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="./css/StyleCadastro.css">
 
     <link rel="preconnect" href=https://fonts.googleapis.com>
 
@@ -14,7 +15,6 @@
 
         rel="stylesheet">
 </head>
-<link rel="stylesheet" href="StyleCadastro.css">
 <body>
 <div class="ContainerMae">
     <div class="ContainerPai">
@@ -48,11 +48,11 @@
 </html>
 <script>
   function cadastrar() {
-    var nomeVar =input_nome.value;
-    var cnpjVar =input_cnpj.value;
+    var nomeVar = input_nome.value;
+    var cnpjVar = input_cpnj.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
-    var confirmacaoSenhaVar = input_Confirmarsenha.value;
+    var confirmacaoSenhaVar = input_ConfirmarSenha.value;
 
     if (
       nomeVar == "" ||
@@ -83,7 +83,7 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          
+
             alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`);
 
           setTimeout(() => {

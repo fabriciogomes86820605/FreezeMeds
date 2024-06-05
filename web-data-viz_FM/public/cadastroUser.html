@@ -43,6 +43,9 @@
                 <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Confirmar Senha</p>
                 <input id="input_ConfirmarSenha" class="input" type="password">
+                <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Empresa</p>
+                <input id="input_fkEmpresa" class="input" type="text">
             </div>
 
             <p style="display: flex; justify-content: flex-start; align-items: center; width: 90%; font-size: 20px;">Já tem Cadastro? <a href="login2.0.html" >Faça login</a></p>
@@ -54,8 +57,9 @@
 </html>
 <script>
     function cadastrar() {
-      var nomeVar =input_nome.value;
-      var cpfVar =input_cpf.value;
+
+      var nomeVar = input_nome.value;
+      var cpfVar = input_cpf.value;
       var emailVar = input_email.value;
       var tel1Var = input_telefone1.value;
       var tel2Var = input_telefone2.value;
@@ -75,7 +79,7 @@
         return false;
       }
   
-      fetch("/empresas/cadastrar", {
+      fetch("/usuarios/cadastrar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +92,8 @@
           senhaServer: senhaVar,
           cpfServer: cpfVar,
           tel1Server: tel1Var,
-          tel2Server: tel2Var
+          tel2Server: tel2Var,
+          fkMarcaServer: fkMarcaVar
         }),
       })
         .then(function (resposta) {
