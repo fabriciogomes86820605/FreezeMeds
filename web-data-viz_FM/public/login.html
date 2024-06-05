@@ -24,13 +24,13 @@
             <div class="InputsCadastro">
                 <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Email</p>
-                <input id="input_nome" class="input" type="text">
+                <input id="input_email" class="input" type="text">
                 <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Senha</p>
-                <input id="input_cpnj" class="input" type="text">
+                <input id="input_senha" class="input" type="text">
                 
             <p style="display: flex; justify-content: flex-start; align-items: center; width: 90%; font-size: 20px;">Não tem conta? <a href="cadastro2.0.html" >Faça seu cadastro!</a></p>
-            <button class="Btn">Fazer Login</button>
+            <button onclick="entrar()" class="Btn">Entrar</button>
         </div>
     </div>
 </div>
@@ -40,19 +40,13 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+           alert(`Preencha todos os campos para continuar`)
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -76,9 +70,9 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
@@ -92,7 +86,6 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
                 });
             }
 
@@ -102,9 +95,4 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>

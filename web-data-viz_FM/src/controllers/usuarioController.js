@@ -1,5 +1,4 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -17,23 +16,7 @@ function autenticar(req, res) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
-                    if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
-
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                    });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
-                            })
-                    } else if (resultadoAutenticar.length == 0) {
+                    if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
@@ -58,6 +41,7 @@ function cadastrar(req, res) {
     var cpf = req.body.cpfServer;
     var tel1 = req.body.tel1Server;
     var tel2 = req.body.tel2Server;
+    var fkMarca = req.body.fkMarcaServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -72,10 +56,12 @@ function cadastrar(req, res) {
         res.status(400).send("Seu telefone está undefined!");
     } else if (tel2 == undefined) {
         res.status(400).send("Seu telefone está undefined!");
+    } else if (fkMarca == undefined) {
+        res.status(400).send("Sua empresa está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, cpf, tel1, tel2)
+        usuarioModel.cadastrar(nome, email, senha, cpf, tel1, tel2, fkMarca)
             .then(
                 function (resultado) {
                     res.json(resultado);

@@ -27,7 +27,7 @@
                 <input id="input_nome" class="input" type="text">
                 <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">CPF</p>
-                <input id="input_cpnj" class="input" type="text">
+                <input id="input_cpf" class="input" type="text">
                 <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Email</p>
                 <input id="input_email" class="input" type="text">
@@ -45,7 +45,7 @@
                 <input id="input_ConfirmarSenha" class="input" type="password">
                 <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Empresa</p>
-                <input id="input_fkEmpresa" class="input" type="text">
+                <input id="input_fkEmpresa" class="input" type="number">
             </div>
 
             <p style="display: flex; justify-content: flex-start; align-items: center; width: 90%; font-size: 20px;">Já tem Cadastro? <a href="login2.0.html" >Faça login</a></p>
@@ -64,7 +64,8 @@
       var tel1Var = input_telefone1.value;
       var tel2Var = input_telefone2.value;
       var senhaVar = input_senha.value;
-      var confirmacaoSenhaVar = input_Confirmarsenha.value;
+      var confirmacaoSenhaVar = input_ConfirmarSenha.value;
+      var fkMarcaVar = input_fkEmpresa.value;
   
       if (
         nomeVar == "" ||
@@ -73,7 +74,8 @@
         tel1Var == "" ||
         tel2Var == "" ||
         senhaVar == "" ||
-        confirmacaoSenhaVar == ""
+        confirmacaoSenhaVar == "" ||
+        fkMarcaVar == ""
       ) {
         alert(`Preencha todos os campos para continuar com o cadastro!`);
         return false;
