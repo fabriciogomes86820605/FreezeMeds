@@ -1,0 +1,101 @@
+.body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.ContainerMae{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.ContainerPai {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E1E1E1;
+}
+
+.ConteudoCadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #FFFF;
+    border-radius: 35px;
+    width: 512px;
+    margin: 0px;
+    height: 343px;
+}
+
+.ConteudoCadastro h1{
+    margin: 0px;
+    font-size: 40px;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #000000;
+}
+ 
+
+.InputsCadastro {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.InputsCadastro p{
+    margin: 0px;
+    font-size: 20px;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #000000;
+}
+
+.input {
+    width: 90%;
+    height: 39px;
+    border-radius: 15px;
+    border: 0px;
+    background-color: #d9d9d9;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+}
+
+
+.Btn {
+    width: 230px;
+    height: 41px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: #3b406d;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    border: none;
+    margin-bottom: 13px;
+    transition: transform 0.4s ease;
+}
+
+.Btn:hover{
+    background-color: #343e97;
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+    transition-delay: 5ms;
+    transition-duration: 5ms;
+    
+    }
+    
