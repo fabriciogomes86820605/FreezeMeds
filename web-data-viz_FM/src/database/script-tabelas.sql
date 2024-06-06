@@ -20,17 +20,6 @@ senhaMarca varchar(40)
 
 );
 
-create table Compra (
-
-idCompra int primary key auto_increment,
-qtdCamara char(4),
-dataEntrega date,
-fkMarca int,
-constraint fkMarcaCompra foreign key (fkMarca)
-references Marca (idMarcaRemedio)
-
-);
-
 create table usuario (
 
 idUsuario int primary key auto_increment,
