@@ -27,7 +27,7 @@ body {
  height: 100vh;
  background-repeat: round;
  background-size: cover;
- background-image: url(./assets/fotoBackgroundabertura.png);
+ background-image: url(../assets/fotoBackgroundabertura.png);
 }
 
 #navbar {
@@ -113,7 +113,7 @@ margin-right: 11vh;
 .SegundaPagina {
  width: 100%;
  height: 100%;
- background-image: url(./assets/ComoFunciona/background.png);
+ background-image: url(../assets/ComoFunciona/background.png);
  background-size: cover;
  background-repeat: no-repeat;
  background-attachment: fixed;

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreezeMeds | Login</title>
-    <script src="./js/sessao.js"></script>
+    <title>Cadastro</title>
 
     <link rel="preconnect" href=https://fonts.googleapis.com>
 
@@ -14,7 +13,7 @@
 
         rel="stylesheet">
 </head>
-<link rel="stylesheet" href="./css/StyleLogin.css">
+<link rel="stylesheet" href="StyleLogin.css">
 <body>
 <div class="ContainerMae">
     <div class="ContainerPai">
@@ -29,70 +28,68 @@
                 width: 90%;">Senha</p>
                 <input id="input_senha" class="input" type="text">
                 
-            <p style="display: flex; justify-content: flex-start; align-items: center; width: 90%; font-size: 20px;">Não tem conta? <a href="cadastro2.0.html" >Faça seu cadastro!</a></p>
-            <button onclick="entrar()" class="Btn">Entrar</button>
+            <p style="display: flex; justify-content: flex-start; align-items: center; width: 63%; height: 35px; font-size: 20px;">Não tem conta? <a style="text-decoration: none; " href="cadastro2.0.html" >Faça seu cadastro!</a></p>
+            <button onclick="entrar()" class="Btn">Fazer Login</button>
         </div>
     </div>
 </div>
 </body>
 </html>
 <script>
-
-
     function entrar() {
 
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
+var emailVar = input_email.value;
+var senhaVar = input_senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-           alert(`Preencha todos os campos para continuar`)
-            return false;
-        }
+if (emailVar == "" || senhaVar == "") {
+   alert(`Preencha todos os campos para continuar`)
+    return false;
+}
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+console.log("FORM LOGIN: ", emailVar);
+console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+fetch("/usuarios/autenticar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+    })
+}).then(function (resposta) {
+    console.log("ESTOU NO THEN DO entrar()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
+    if (resposta.ok) {
+        console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log("json: "+json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json[0].emailUsuario;
-                    sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
-                    sessionStorage.ID_USUARIO = json[0].idUsuario;
+        resposta.json().then(json => {
+            console.log("json: "+json);
+            console.log(JSON.stringify(json));
+            sessionStorage.EMAIL_USUARIO = json[0].emailUsuario;
+            sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
+            sessionStorage.ID_USUARIO = json[0].idUsuario;
 
-                    setTimeout(function () {
-                        window.location = "./dashboard/dashboard.html";
-                    }, 1000); // apenas para exibir o loading
+            setTimeout(function () {
+                window.location = "./dashboard/dashboard.html";
+            }, 1000); // apenas para exibir o loading
 
-                });
+        });
 
-            } else {
+    } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+        console.log("Houve um erro ao tentar realizar o login!");
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+        resposta.text().then(texto => {
+            console.error(texto);
+        });
     }
+
+}).catch(function (erro) {
+    console.log(erro);
+})
+
+return false;
+}
 </script>
