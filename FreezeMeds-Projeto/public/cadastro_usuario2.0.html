@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="preconnect" href=https://fonts.googleapis.com>
+
+    <link rel="preconnect" href=https://fonts.gstatic.com crossorigin>
+
+    <link href=https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Sora:wght@100..800&display=swap
+        rel="stylesheet">
+</head>
+<link rel="stylesheet" href="./css/StyleCadastro_usuario.css">
+
+<body>
+    <div class="ContainerMae">
+        <div class="ContainerPai">
+            <div class="ConteudoCadastro">
+                <h1>Cadastro Usuário</h1>
+
+                
+                <div class="InputsCadastro">
+                    <div>
+
+                        <h1>Dados Pessoais:</h1>
+
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Nome</p>
+                    <input id="input_nome" class="input" type="text">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">CPF</p>
+                    <input id="input_cpf" class="input" type="text">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Telefone1</p>
+                    <input id="input_telefone1" class="input" type="text">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Telefone2</p>
+                    <input id="input_telefone2" class="input" type="text">
+                </div>
+
+                    <div>
+
+                        <h1>Dados de acesso:</h1>
+                
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                    width: 90%;">Email</p>
+                    <input id="input_email" class="input" type="text">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Senha</p>
+                    <input id="input_senha" class="input" type="password">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">Confirmar Senha</p>
+                    <input id="input_ConfirmarSenha" class="input" type="password">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
+                width: 90%;">fkEmpresa</p>
+                    <input id="input_fkEmpresa" class="input" type="text">
+                </div>
+                </div>
+
+                <p
+                    style="display: flex; justify-content: flex-start; align-items: center; width: 30%; font-size: 20px;">
+<<<<<<<< HEAD:FreezeMeds-Projeto/public/cadastro_usuario.html
+                    Já tem Cadastro? <a style="text-decoration: none;" href="login.html">Faça login</a></p>
+========
+                    Já tem Cadastro? <a style="text-decoration: none;" href="login2.0.html">Faça login</a></p>
+>>>>>>>> 36c0813713112e58c4d079a4ae0af955e1da1a3d:FreezeMeds-Projeto/public/cadastro_usuario2.0.html
+                <button onclick="cadastrar()" class="Btn">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function cadastrar() {
+
+<<<<<<<< HEAD:FreezeMeds-Projeto/public/cadastro_usuario.html
+</html>
+<script>
+    function cadastrar() {
+
+var nomeVar = input_nome.value;
+var cpfVar = input_cpf.value;
+var emailVar = input_email.value;
+var tel1Var = input_telefone1.value;
+var tel2Var = input_telefone2.value;
+var senhaVar = input_senha.value;
+var confirmacaoSenhaVar = input_ConfirmarSenha.value;
+
+if (
+  nomeVar == "" ||
+  cpfVar == "" ||
+  emailVar == "" ||
+  tel1Var == "" ||
+  tel2Var == "" ||
+  senhaVar == "" ||
+  confirmacaoSenhaVar == ""
+) {
+  alert(`Preencha todos os campos para continuar com o cadastro!`);
+  return false;
+}
+
+fetch("/usuarios/cadastrar", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    // crie um atributo que recebe o valor recuperado aqui
+    // Agora vá para o arquivo routes/usuario.js
+    nomeServer: nomeVar,
+    emailServer: emailVar,
+    senhaServer: senhaVar,
+    cpfServer: cpfVar,
+    tel1Server: tel1Var,
+    tel2Server: tel2Var,
+  }),
+})
+  .then(function (resposta) {
+    console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+      
+        alert(`Cadastro do usuario feito com sucesso! redirecionando para tela de Login...`);
+
+      setTimeout(() => {
+        window.location = "login.html";
+      }, "2000");
+    } else {
+      alert(`Houve um erro ao tentar realizar o cadastro!`);
+    }
+  })
+  .catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+  });
+
+return false;
+}
+</script>
+========
+      var nomeVar = input_nome.value;
+      var cpfVar = input_cpf.value;
+      var emailVar = input_email.value;
+      var tel1Var = input_telefone1.value;
+      var tel2Var = input_telefone2.value;
+      var senhaVar = input_senha.value;
+      var confirmacaoSenhaVar = input_ConfirmarSenha.value;
+      var fkMarcaVar = input_fkEmpresa.value;
+  
+      if (
+        nomeVar == "" ||
+        cpfVar == "" ||
+        emailVar == "" ||
+        tel1Var == "" ||
+        tel2Var == "" ||
+        senhaVar == "" ||
+        confirmacaoSenhaVar == "" ||
+        fkMarcaVar == ""
+      ) {
+        alert(`Preencha todos os campos para continuar com o cadastro!`);
+        return false;
+      }
+  
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          cpfServer: cpfVar,
+          tel1Server: tel1Var,
+          tel2Server: tel2Var,
+          fkMarcaServer: fkMarcaVar
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            
+              alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`);
+  
+            setTimeout(() => {
+              window.location = "login2.0.html";
+            }, "2000");
+          } else {
+            alert(`Houve um erro ao tentar realizar o cadastro!`);
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+  
+      return false;
+    }
+  </script>
+>>>>>>>> 36c0813713112e58c4d079a4ae0af955e1da1a3d:FreezeMeds-Projeto/public/cadastro_usuario2.0.html
