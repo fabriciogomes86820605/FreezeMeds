@@ -47,74 +47,12 @@
                 <p
                     style="display: flex; justify-content: flex-start; align-items: center; width: 35%; font-size: 20px;">
                     Já tem Cadastro? <a style="text-decoration: none;" href="login2.0.html">Faça login</a></p>
-<<<<<<<< HEAD:FreezeMeds-Projeto/public/cadastro_marca.html
-                <button onclick="cadastrarMarca()" class="Btn">Cadastrar</button>
-========
+
                 <button onclick="cadastrar()" class="Btn">Cadastrar</button>
->>>>>>>> 36c0813713112e58c4d079a4ae0af955e1da1a3d:FreezeMeds-Projeto/public/cadastro2.0.html
             </div>
         </div>
     </div>
 </body>
-<<<<<<<< HEAD:FreezeMeds-Projeto/public/cadastro_marca.html
-
-</html>
-<script>
-    function cadastrarMarca() {
-    var nomeVar = input_nome.value;
-    var cnpjVar = input_cpnj.value;
-    var emailVar = input_email.value;
-    var senhaVar = input_senha.value;
-    var confirmacaoSenhaVar = input_ConfirmarSenha.value;
-
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      cnpjVar == ""
-    ) {
-      alert(`Preencha todos os campos para continuar com o cadastro!`);
-      return false;
-    }
-
-    fetch("/empresas/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        cnpjServer: cnpjVar
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-
-            alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`);
-
-          setTimeout(() => {
-            window.location = "cadastro_usuario.html";
-          }, "2000");
-        } else {
-          alert(`Houve um erro ao tentar realizar o cadastro!`);
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-
-    return false;
-  }
-</script>
-========
-</html>
 <script>
     function cadastrar() {
       var nomeVar = input_nome.value;
@@ -156,7 +94,7 @@
               alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`);
   
             setTimeout(() => {
-              window.location = "cadastro_usuario2.0.html";
+              window.location = "cadastro_usuario.html";
             }, "2000");
           } else {
             alert(`Houve um erro ao tentar realizar o cadastro!`);
@@ -169,4 +107,3 @@
       return false;
     }
   </script>
->>>>>>>> 36c0813713112e58c4d079a4ae0af955e1da1a3d:FreezeMeds-Projeto/public/cadastro2.0.html
