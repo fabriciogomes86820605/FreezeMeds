@@ -20,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body >
+<body onload="validarSessao(), atualizarFeed()">
 
     <div class="nav_bar">
         <div class="logo"></div>
@@ -231,13 +231,12 @@
 
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
-
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
         }
 
-        fetch(`/avisos/publicar/${idUsuario}`, {
+        fetch(`/avisos/publicar/${idUsuario}`,{
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -359,7 +358,7 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
