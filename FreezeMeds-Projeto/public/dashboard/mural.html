@@ -9,7 +9,7 @@
     <title>AquaTech | Avisos</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
+    <link rel="stylesheet" href="./../css/estilo.css" />
     <link rel="stylesheet" href="../css/styledash.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -25,11 +25,10 @@
     <div class="nav_bar">
         <div class="logo"></div>
         <ul class="menu">
-  
-    <span id="b_usuario">Usuário</span>
-  
-               
-        
+
+            <span id="b_usuario"></span>
+
+
             <li>
                 <svg viewBox="0 0 24 24" fill="none">
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -48,7 +47,7 @@
                             stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
                     </g>
                 </svg>
-                <a href="#">Dashboard</a>
+                <a href="./dashboard.html">Dashboard</a>
             </li>
 
             <li>
@@ -72,7 +71,7 @@
                     </svg>
                     Estatisticas</a>
             </li>
-            
+
             <li>
 
                 <a href="./mural.html">
@@ -92,7 +91,7 @@
                                 fill="#ffffff"></path>
                         </g>
                     </svg>
-                   Mural</a>
+                    Mural</a>
             </li>
 
             <li>
@@ -231,6 +230,7 @@
 
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
+        var nome = sessionStorage.NOME_USUARIO;
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
@@ -327,7 +327,7 @@
 
                         spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + sessionStorage.NOME_USUARIO + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";

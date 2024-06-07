@@ -22,7 +22,7 @@
         <div class="logo"></div>
         <ul class="menu">
 
-            <span id="b_usuario">Usuário</span>
+            <span id="b_usuario"></span>
 
 
             <li>
@@ -43,7 +43,7 @@
                             stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
                     </g>
                 </svg>
-                <a href="#">Dashboard</a>
+                <a href="./dashboard.html">Dashboard</a>
             </li>
 
             <li>
@@ -212,16 +212,11 @@
         <div style="display: flex; flex-direction: row;">
 
 
-            <div class="container_grafico">
+            <div id="container" class="container_grafico">
 
                 <p>
                     Monitoramento
                 </p>
-
-
-
-
-                <canvas id="lm35Temperatura"></canvas>
 
             </div>
             <div class="container_cards">
@@ -236,7 +231,7 @@
                     </li>
 
                 </div>
-
+<!-- 
                 <div class="container_2">
                     <li class="card" style="margin-top: 20px;">
                         <p>Arduino 3</p>
@@ -246,17 +241,17 @@
                         <p>Arduino 4</p>
 
                     </li>
-                </div>
+                </div> -->
             </div>
         </div>
         <div style="display:flex;flex-direction:row;">
-            <div id="container" class="container_grafico_barras">
+            <div  class="container_grafico_barras">
                 <p>Média Semanal</p>
 
 
 
             </div>
-            <div class="contanercards2">
+            <!-- <div class="contanercards2">
                 <div class="container_2" style="margin-left: 50px;">
                     <li class="card">
                         <p>Arduino 5</p>
@@ -268,18 +263,18 @@
                     </li>
 
                 </div>
-            </div>
+            </div> -->
 </body>
 
 </html>
-</body>
+
 
 </html>
 
 <script>
 
-const limiteMinimo = 0;
-const limiteMaximo = 7; 
+    const limiteMinimo = 0;
+    const limiteMaximo = 7;
 
     function exibirGraficos() {
 
@@ -313,51 +308,49 @@ const limiteMaximo = 7;
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
-
+    chart.toggleDataVisibility(2); // toggles the item in all datasets, at index 2
+    chart.update(); // chart now renders with item hidden
     function plotarGrafico(resposta) {
-    console.log('iniciando plotagem do gráfico...');
-
-    let labels = [];
-    let dados = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperatura',
-            data: [],
-            fill: false,
-            borderColor: '#2d88bc',
-            borderWidth: 2,
-            backgroundColor: '#5da0c7',
-            tension: 0.1
-        }]
-    };
-
-    console.log('Dados recebidos para plotar no gráfico Usuario:', resposta);
-
-    for (let i = 0; i < resposta.length; i++) {
-        var registro = resposta[i];
-        labels.push(registro.nome);
-
-        // Verifica se o valor está dentro do limite
-        let valor = registro.qndPontos;
-        if (valor >= limiteMinimo && valor <= limiteMaximo) {
-            dados.datasets[0].data.push(valor);
-        } else {
-            console.log(`Valor ${valor} fora do limite (${limiteMinimo} - ${limiteMaximo}). Será ignorado.`);
+        
+        console.log('iniciando plotagem do gráfico...');
+        let data = []
+        let labels = [];
+        for (let i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.registroData);
+            data.push(registro.temperatura)
         }
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Temperatura',
+                data: data,
+                fill: false,
+                borderColor: '#2d88bc',
+                borderWidth: 2,
+                backgroundColor: '#5da0c7',
+                tension: 0.1
+            }]
+        };
+
+        console.log('Dados recebidos para plotar no gráfico Usuario:', resposta);
+
+
+        console.log('Labels:', labels);
+        console.log('Dados do Dataset:', dados.datasets);
+
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        let ctx = document.getElementById('myChart').getContext('2d');
+
+        let myChartGrafico = new Chart(ctx, config);
     }
-
-    console.log('Labels:', labels);
-    console.log('Dados do Dataset:', dados.datasets);
-
-    const config = {
-        type: 'bar',
-        data: dados,
-    };
-
-    let ctx = document.getElementById('myChart').getContext('2d');
-
-    let myChartGrafico = new Chart(ctx, config);
-}
-
+        setInterval(()=>
+    {
+        plotarGrafico(resposta)
+},100)
 
 </script>

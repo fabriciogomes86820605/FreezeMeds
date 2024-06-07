@@ -5,7 +5,6 @@
 body {
   margin: 0;
   padding: 0;
-
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body::-webkit-scrollbar {
@@ -19,6 +18,7 @@ body::-webkit-scrollbar {
 
 .dash-right .avisos {
   width: 100%;
+
   color: rgb(216, 216, 216);
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -329,9 +329,8 @@ color: black;
 }
 
 canvas {
-  width: 80% !important;
-  height: 20% !important;
-
+  width: 100% !important;
+  height: 100% !important;
 color: white;
   
 }
@@ -386,7 +385,7 @@ align-items: center;
   display: flex;
   align-items: center;
   width: 70%;
-  
+  margin-left: 10%;
   height: fit-content;
   background-color: #ffffff;
   position: relative;
