@@ -8,7 +8,7 @@ router.get("/ultimas/:idDados", function (req, res) {
 });
 
 router.get("/ultimasMedidas/", function (req, res) {
-    metricaController.buscarUltimasMedidas(req, res);
+    medidaController.buscarUltimasMedidas(req, res);
 });
 
 router.get("/tempo-real/:idDados", function (req, res) {

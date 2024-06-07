@@ -278,6 +278,9 @@
 
 <script>
 
+const limiteMinimo = 0;
+const limiteMaximo = 7; 
+
     function exibirGraficos() {
 
         document.getElementById("container").innerHTML += `
@@ -312,42 +315,49 @@
     }
 
     function plotarGrafico(resposta) {
-        console.log('iniciando plotagem do gráfico...');
+    console.log('iniciando plotagem do gráfico...');
 
-        let labels = [];
-        let dados = {
-            labels: labels,
-            datasets: [{
-                label: 'Temperatura',
-                data: [],
-                fill: false,
-                borderColor: '#2d88bc',
-                borderWidth: 2,
-                backgroundColor: '#5da0c7',
-                tension: 0.1
-            }]
-        };
+    let labels = [];
+    let dados = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            data: [],
+            fill: false,
+            borderColor: '#2d88bc',
+            borderWidth: 2,
+            backgroundColor: '#5da0c7',
+            tension: 0.1
+        }]
+    };
 
-        console.log('Dados recebidos para plotar no gráfico Usuario:', resposta);
+    console.log('Dados recebidos para plotar no gráfico Usuario:', resposta);
 
-        for (let i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.nome);
-            dados.datasets[0].data.push(registro.qndPontos);
+    for (let i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        labels.push(registro.nome);
+
+        // Verifica se o valor está dentro do limite
+        let valor = registro.qndPontos;
+        if (valor >= limiteMinimo && valor <= limiteMaximo) {
+            dados.datasets[0].data.push(valor);
+        } else {
+            console.log(`Valor ${valor} fora do limite (${limiteMinimo} - ${limiteMaximo}). Será ignorado.`);
         }
-
-        console.log('Labels:', labels);
-        console.log('Dados do Dataset:', dados.datasets);
-
-        const config = {
-            type: 'bar',
-            data: dados,
-        };
-
-        let ctx = document.getElementById('myChart').getContext('2d');
-
-        let myChartGrafico = new Chart(ctx, config);
-
     }
+
+    console.log('Labels:', labels);
+    console.log('Dados do Dataset:', dados.datasets);
+
+    const config = {
+        type: 'bar',
+        data: dados,
+    };
+
+    let ctx = document.getElementById('myChart').getContext('2d');
+
+    let myChartGrafico = new Chart(ctx, config);
+}
+
 
 </script>

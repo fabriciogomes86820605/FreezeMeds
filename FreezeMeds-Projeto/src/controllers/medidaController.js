@@ -21,5 +21,5 @@ function buscarUltimasMedidas(req, res) {
 
 
 module.exports = {
-    buscarUltimasMedidas,
+    buscarUltimasMedidas
 }
