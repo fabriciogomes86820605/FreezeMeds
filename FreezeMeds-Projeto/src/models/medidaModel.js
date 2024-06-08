@@ -10,8 +10,6 @@ JOIN Sensor ON Sensor.idSensor = 1 order by Dados.idDados;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
-
 module.exports = {
 
     buscarUltimasMedidas

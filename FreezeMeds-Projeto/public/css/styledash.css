@@ -34,7 +34,8 @@ body {
 
 
 }
-.menu span{
+
+.menu span {
     width: 100%;
     text-align: center;
 }
@@ -104,29 +105,32 @@ body {
 .conteudo_header {
     width: 100%;
     height: 100%;
-align-items: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.farmacias{
+
+.farmacias {
     display: flex;
     align-items: center;
     margin-left: 10%;
- 
-  
+
+
 
 }
-.farmacias select{
-   width: 300px;
-   text-align: center;
-   height: 50px;
-   border-radius: 10px;
+
+.farmacias select {
+    width: 300px;
+    text-align: center;
+    height: 50px;
+    border-radius: 10px;
 }
+
 .metricas {
     display: flex;
     width: 80%;
-flex-direction: row-reverse;
+    flex-direction: row-reverse;
     align-items: center;
 
 }
@@ -155,9 +159,10 @@ flex-direction: row-reverse;
     margin-top: 20px;
     font-size: 15px;
 }
-.container_cards{
+
+.container_cards {
     display: flex;
-align-items: center;
+    align-items: center;
     flex-direction: column;
     width: 50%;
     margin-left: 20px;
@@ -165,41 +170,48 @@ align-items: center;
     border-radius: 10px;
 
 }
-.container_2{
-    display:flex ;
+canvas {
+    width: 100% !important;
+    height: 80% !important;
+  }
+.container_2 {
+    display: flex;
     align-items: center;
     width: 100%;
-
-
-
 }
-.container_cards li{
+
+
+.container_cards li {
     list-style-type: none;
 
 }
+
 .contanercards2 {
     display: flex;
     align-items: center;
-        flex-direction: column;
-        width: 50%;
-margin-right: 20px;
-        margin-top: 10px;
-        border-radius: 10px;
-    
+    flex-direction: column;
+    width: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+
 }
-.card{
+
+.card {
     display: flex;
     flex-direction: row;
     width: 40%;
     align-items: center;
     height: 150px;
     border-radius: 10px;
-    background-color:rgb(255, 255, 255) ;
+    background-color: rgb(255, 255, 255);
 }
-.card p{
+
+.card p {
     width: 100%;
     text-align: center;
 }
+
 .container_grafico {
     display: flex;
     margin-top: 20px;
@@ -208,16 +220,21 @@ margin-right: 20px;
     flex-direction: column;
     background-color: #ffffff;
     padding: 10px;
-    width:55%;
+    width: 70%;
     height: 400px;
     border-radius: 10px;
     align-items: center;
 }
-.grafico{
+
+.grafico {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+.grafico h3{
+    text-align: center;
+}
+
 .container_grafico p {
     font-size: 20px;
 
@@ -230,10 +247,11 @@ margin-right: 20px;
     /* margin-left: 220px; */
     flex-direction: column;
     padding: 20px;
-    width:54%; 
+    width: 54%;
     height: 300px;
     border-radius: 10px;
 }
+
 .container_grafico_barras p {
     font-size: 20px;
 }
