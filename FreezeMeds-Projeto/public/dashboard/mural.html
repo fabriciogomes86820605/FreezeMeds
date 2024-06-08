@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <title>Manutenção</title>
 
-    <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
+    <!-- <link rel="stylesheet" href="./../css/dashboards.css"> -->
+    <!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
     <link rel="stylesheet" href="../css/styledash.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -161,37 +161,50 @@
 
     </div>
 
-        <div class="dash-right">
+        <div class="pai">
+<div class="suporte"> 
+
 
 
             <div class="avisos">
                 <div id="alerta">
+                </div>       
+                <div class="header">
+                    <div style="display: flex;flex-direction: column;">
+                            <h1>Suporte Freeze Meds</h1>
+                     <h3>Conte cosnosco para resolver seu problema</h3>
+                    </div>
+                 
                 </div>
+                   
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
+             
                     <div class="div-form">
+                        <h2>Informe seu problema abaixo</h2>
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                                Título:
+                           
                                 <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                                <input placeholder="Resumo:" name="titulo" id="titulo" maxlength="100" type="text">
                             </label>
-                            <br>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                            
+                            
+                            <label id="desc">
+                                <textarea placeholder="Descrição (máximo de 250 caracteres):" name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
-                            <br>
-                            <br>
+                       
                             <button>Enviar</button>
                         </form>
                     </div>
-                    <h1>Mural de Avisos</h1>
+                    </div>
+                    <div class="postagemmsg">
+
+                  
+                    <h1>Problemas</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
+                      </div>
                     </div>
                 </div>
             </div>
