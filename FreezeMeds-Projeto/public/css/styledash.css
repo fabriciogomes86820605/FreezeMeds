@@ -79,8 +79,7 @@ svg {
     border-radius: 10px;
     margin-top: 20px;
     width: 95%;
-    height: 80px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px ;
     flex-direction: row;
 }
 
@@ -258,14 +257,14 @@ canvas {
     margin-top: 30px;
     flex-direction: column;
     padding: 20px;
-    width: 95%;
+    width: 93%;
     height: 300px;
+    padding: 30px;
     border-radius: 10px;
 }
 
 .div-form button {
     margin-top: 10px;
-
     background-color: #1e04ac;
     border: none;
     color: white;
@@ -281,8 +280,8 @@ canvas {
 }
 
 .div-form button:hover {
-    background-color: #4CAF50;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #4694e8;
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
 }
 
 .div-form label {
@@ -291,6 +290,16 @@ canvas {
     flex-direction: row;
     margin-top: 5px;
     /* margin-left: 15%; */
+}
+.header-manutenção{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 95%;
+padding: 20px;
+
+    flex-direction: row;
 }
 
 .div-form input {
@@ -309,17 +318,64 @@ canvas {
 
 .postagemmsg {
     display: flex;
-    text-align: center;
     background-color: #ffffff;
     margin-top: 30px;
     flex-direction: column;
     padding: 20px;
     width: 95%;
-    height: 300px;
     border-radius: 10px;
 }
+.postagemmsg p{
+    font-size: 40px;
+}
+.publicacao {
+    display: flex;
+    background-color: #ffffff;
+    color: #000000;
+ 
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 3px solid #000000;
+    padding: 20px;
+  }
+  
+  .publicacao>*:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  .publicacao button{
+    margin-top: 10px;
+    background-color: #1e04ac;
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  .publicacao button:hover{
 
+    background-color: #4694e8;
+    box-shadow: 0 5px 15px rgb(0, 0, 0);
+  }
 .container {
     display: flex;
     flex-direction: row;
 }
+.div-results {
+    width: 100%;
+    color: #ffffff;
+  }
+  
+  .div-results .feed-container {
+    background-color: #212124;
+    border-radius: 5px;
+    margin-bottom: 80px;
+  }

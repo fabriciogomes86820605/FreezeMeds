@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manutenção</title>
+    <title>Suporte</title>
 
     <!-- <link rel="stylesheet" href="./../css/dashboards.css"> -->
     <!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
@@ -26,7 +26,11 @@
         <div class="logo"></div>
         <ul class="menu">
 
-            <span id="b_usuario"></span>
+            <div style="flex-direction: row;">
+                Olá
+                <span id="b_usuario"></span>
+            </div>
+        
 
 
             <li>
@@ -159,20 +163,17 @@
         </ul>
 
 
-    </div>
+     </div>
 
-        <div class="pai">
-<div class="suporte"> 
-
-
-
+     <div class="pai">
+             <div class="suporte"> 
             <div class="avisos">
                 <div id="alerta">
                 </div>       
-                <div class="header">
+                <div class="header-manutenção">
                     <div style="display: flex;flex-direction: column;">
-                            <h1>Suporte Freeze Meds</h1>
-                     <h3>Conte cosnosco para resolver seu problema</h3>
+                            <h3>Suporte Técnico</h3>
+                     <i>Conte cosnosco para resolver seu problema</i>
                     </div>
                  
                 </div>
@@ -180,7 +181,7 @@
                 <div class="container">
              
                     <div class="div-form">
-                        <h2>Informe seu problema abaixo</h2>
+                        <h2>Informe seu problema abaixo:</h2>
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
                            
@@ -198,9 +199,7 @@
                     </div>
                     </div>
                     <div class="postagemmsg">
-
-                  
-                    <h1>Problemas</h1>
+                </h2>   <p>Chamados: </p>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
@@ -209,7 +208,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 
 
@@ -319,7 +318,7 @@
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
+                        // var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
 
@@ -327,7 +326,7 @@
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + sessionStorage.NOME_USUARIO + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
+                        // btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
@@ -338,9 +337,9 @@
 
                         divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        // btnEditar.className = "publicacao-btn-editar"
+                        // // btnEditar.id = "btnEditar" + publicacao.idAviso;
+                        // btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idAviso;
@@ -351,7 +350,7 @@
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
+                        // divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
