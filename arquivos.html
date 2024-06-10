@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSICARE | FREEZE_IA</title>
+
+
+<!-- <link rel="stylesheet" href="./../css/dashboards.css"> -->
+<!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
+<link rel="stylesheet" href="styledash.css">
+<script src="../js/sessao.js"></script>
+<script src="./../js/alerta.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+<!-- scripts do Chart.js - 2022-1 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!--FONT AWESOME-->
+<script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+
+<html>
+
+<body>
+
+    <div class="nav_bar">
+        <div class="logo"></div>
+        <ul class="menu">
+
+            <h1>FREEZEMEDS</h1>
+            <li>
+                <svg viewBox="0 0 24 24" fill="none">
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M13 12C13 11.4477 13.4477 11 14 11H19C19.5523 11 20 11.4477 20 12V19C20 19.5523 19.5523 20 19 20H14C13.4477 20 13 19.5523 13 19V12Z"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
+                        <path
+                            d="M4 5C4 4.44772 4.44772 4 5 4H9C9.55228 4 10 4.44772 10 5V12C10 12.5523 9.55228 13 9 13H5C4.44772 13 4 12.5523 4 12V5Z"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
+                        <path
+                            d="M4 17C4 16.4477 4.44772 16 5 16H9C9.55228 16 10 16.4477 10 17V19C10 19.5523 9.55228 20 9 20H5C4.44772 20 4 19.5523 4 19V17Z"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
+                        <path
+                            d="M13 5C13 4.44772 13.4477 4 14 4H19C19.5523 4 20 4.44772 20 5V7C20 7.55228 19.5523 8 19 8H14C13.4477 8 13 7.55228 13 7V5Z"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
+                    </g>
+                </svg>
+                <a href="index.html">I.A</a>
+            </li>
+
+            <li>
+
+                <a href="">
+                    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M234.666667 938.666667H192c-12.8 0-21.333333-8.533333-21.333333-21.333334v-42.666666h85.333333v42.666666c0 12.8-8.533333 21.333333-21.333333 21.333334zM832 938.666667h-42.666667c-12.8 0-21.333333-8.533333-21.333333-21.333334v-42.666666h85.333333v42.666666c0 12.8-8.533333 21.333333-21.333333 21.333334z"
+                                fill="#ffffff"></path>
+                            <path
+                                d="M576 149.333333h-128c-36.266667 0-64 27.733333-64 64v64h42.666667v-64c0-12.8 8.533333-21.333333 21.333333-21.333333h128c12.8 0 21.333333 8.533333 21.333333 21.333333v64h42.666667v-64c0-36.266667-27.733333-64-64-64z"
+                                fill="#ffffff"></path>
+                            <path
+                                d="M853.333333 917.333333H170.666667c-46.933333 0-85.333333-38.4-85.333334-85.333333V320c0-46.933333 38.4-85.333333 85.333334-85.333333h682.666666c46.933333 0 85.333333 38.4 85.333334 85.333333v512c0 46.933333-38.4 85.333333-85.333334 85.333333z"
+                                fill="#ffffff"></path>
+                        </g>
+                    </svg>
+                    Arquivos</a>
+            </li>
+
+            <li>
+
+                <a href="http://localhost:2424/dashboard/muralADM.html">
+                    <svg viewBox="0 0 30 30" id="Layer_1" version="1.1" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"
+                        stroke="#ffffff">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #FD6A7E;
+                                }
+
+                                .st1 {
+                                    fill: #17B978;
+                                }
+
+                                .st2 {
+                                    fill: #8797EE;
+                                }
+
+                                .st3 {
+                                    fill: #41A6F9;
+                                }
+
+                                .st4 {
+                                    fill: #37E0FF;
+                                }
+
+                                .st5 {
+                                    fill: #2FD9B9;
+                                }
+
+                                .st6 {
+                                    fill: #F498BD;
+                                }
+
+                                .st7 {
+                                    fill: #FFDF1D;
+                                }
+
+                                .st8 {
+                                    fill: #C6C9CC;
+                                }
+                            </style>
+                            <path class="st8"
+                                d="M6,9.3L3.9,5.8l1.4-1.4l3.5,2.1v1.4l3.6,3.6c0,0.1,0,0.2,0,0.3L11.1,13L7.4,9.3H6z M21,17.8c-0.3,0-0.5,0-0.8,0 c0,0,0,0,0,0c-0.7,0-1.3-0.1-1.9-0.2l-2.1,2.4l4.7,5.3c1.1,1.2,3,1.3,4.1,0.1c1.2-1.2,1.1-3-0.1-4.1L21,17.8z M24.4,14 c1.6-1.6,2.1-4,1.5-6.1c-0.1-0.4-0.6-0.5-0.8-0.2l-3.5,3.5l-2.8-2.8l3.5-3.5c0.3-0.3,0.2-0.7-0.2-0.8C20,3.4,17.6,3.9,16,5.6 c-1.8,1.8-2.2,4.6-1.2,6.8l-10,8.9c-1.2,1.1-1.3,3-0.1,4.1l0,0c1.2,1.2,3,1.1,4.1-0.1l8.9-10C19.9,16.3,22.6,15.9,24.4,14z">
+                            </path>
+                        </g>
+                    </svg>
+                    Manutenção</a>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+    <div style="margin-left: 300px;">
+
+        <p>
+
+            <center>
+                <h1>ARQUVOS</h1>
+            </center>
+
+            Está página serve par ajudar os funcionários a realizarem um trabalho eficiente e de qualidade, auxiliando
+            com arquivos que são ed extrema utiliade ao desempenhar sua função!<br><br><br><br>
+
+            Abaixo estão as seções que você pode acessar:<br>
+
+            <a style="text-decoration: none;" href="#inst">Instalação</a><br>
+            <a style="text-decoration: none;" href="#MRn">Modelo e regra de negócio</a><br>
+            <a style="text-decoration: none;" href="">Fluxograma de atendimento</a><br>
+            <a style="text-decoration: none;" href="">Matriz de classificação</a><br><br>
+
+
+        </p>
+
+        <p>
+        <h1 id="inst">INSTALAÇÃO </h1><br><br>
+
+        Instalação do Arduíno:<br>
+
+        Para instalar o Arduíno deverá ser necessário os seguintes itens:<br>
+
+
+        Placa Arduíno UNO<br>
+        Proto Board<br>
+        3x cabos jumper<br>
+        1x sensor LM35<br>
+        1x cabo conector USB<br>
+        1x Computador Desktop ou Notebook<br><br>
+
+        Com todos os componentes em mão será necessário montar todos na placa Arduíno. Como fazer isso? Siga o passo a
+        passo a seguir:<br><br>
+
+
+
+        Passo 1: Pegue a Proto Board e o sensor LM35, logo em seguida conecte o sensor na Proto Board colocando cada
+        pino dele em um "buraco” um do lado do outro.<br><br>
+
+
+        Passo 2: Depois do sensor conectado à Proto Board deve ser feito a conexão dele com o arduíno, pegue a placa
+        Arduíno UNO e os cabos Jumper, conecte um cabo jumper à porta A0 no Arduíno e depois conecte a outra parte do
+        cabo na fileira da perna do meio do sensor (Lembre-se os cabos devem ser conectados nas costas do
+        sensor).<br><br>
+
+        Passo 3: Agora pegue outro cabo jumper e conecte-o na placa Arduíno UNO na porta de 5V (5 volts), após isso
+        conecte a outra parte do cabo na fileira da perna esquerda do arduíno (Lembre-se os cabos devem ser conectados
+        nas costas do sensor).<br><br>
+
+        Passo 4: Agora pegue outro cabo jumper e conecte-o na placa Arduíno UNO na porta GND (Ground), após isso conecte
+        a outra parte do cabo na fileira da perna direita do arduíno (Lembre-se os cabos devem ser conectados nas costas
+        do sensor).<br><br>
+
+
+        Passo 5: Agora conecte o cabo USB na placa Arduíno e depois conecte no computador que irá ser feito a inserção
+        de dados de temperatura.<br><br>
+
+
+        Observação: O arduíno junto com o sensor devem ficar dentro da câmara de resfriamento com os
+        medicamentos.<br><br>
+
+
+        Após esse passo a passo você deverá nos contatar para resolver questões de código no arduíno e iniciar a
+        aplicação. Caso já tenha entrado em contato para resolver a questão técnica, Entre em contato novamente para
+        enviarmos o link do site onde deverá ser inserido no seu navegador padrão assim terá acesso ao site e poder
+        cadastrar sua marca e depois o cadastro do usuário e assim entrar na sua conta, onde será exibida a nossa
+        Dashboard contendo os gráficos da temperatura da câmara de medicamentos termolábeis, conseguindo fazer o
+        monitoramento da forma correta.<br>
+
+        Ao final para checar se tudo está funcionando corretamente, faça o login na nossa plataforma e veja se os
+        gráficos estão sendo atualizados, caso não estejam, deixe um chamado de manutenção na aba de manutenção para que
+        nós analisarmos a situação<br><br>
+
+        Caso não seja possível realizar o cadastro, login, ou abrir um chamado entre em contato via email<br><br>
+        <br><br>
+        <br>
+
+        </p>
+
+        <p id="MRn">
+
+            <h1>MOEDELO E REGRA DE NEGÓCIO</h1>
+
+            OBJETIVO:<br><br>
+            A Freeze Meds terá a responsabilidade de otimizar câmaras de conservação, com o intuito de melhorar o<br>
+            controle de temperatura, e desse modo, diminuir perdas de medicamentos. Para isso se concretizar,<br>
+            utilizaremos o sensor LM35 capaz de captar a temperatura específica do produto.<br>
+            Medicamentos são essenciais para manter a saúde da população em geral. Estes, são extremamente delicados em<br>
+            relação a temperatura e necessitam de um instrumento eficaz, o qual garanta este controle.<br><br><br>
+
+            Afim de concretizar nossos objetivos utilizaremos uma abordagem SMART:<br>
+            • Specific: Instalação de sensores de temperatura em câmaras de resfriamento;<br>
+            • Measurable: Redução em até 30% de perda de medicamento;<br>
+            • Achievable: Manter um sistema de monitoramento de temperatura com os recursos existentes na organização;<br>
+            • Realistic: Garantir a integridade dos medicamentos termolábeis;<br>
+            • Time based: Entrega do projeto 100% realizado em até 3 meses.<br><br>
+
+            JUSTIFICATIVA:<br>
+            Reduzir em até R$ 16 milhões o prejuízo da marca.<br><br>
+
+            ESCOPO<br>
+            • A Freeze Meds terá a responsabilidade de otimizar câmaras de conservação para melhorar o controle de
+            temperatura e reduzir perdas de medicamentos.<br>
+            • Utilização do sensor LM35 para captar a temperatura específica dos produtos.<br>
+            • Medicamentos são delicados em relação à temperatura e requerem um controle eficaz para garantir sua
+            integridade.<br>
+            • A empresa entrará em contato com a FreezeMeds para implantar sua tecnologia nas câmaras de conservação do
+            cliente, com todas as atividades de desenvolvimento realizadas online.<br>
+            • Implantação imediata da tecnologia após contato e pagamento.<br>
+            • Desenvolvimento dos códigos utilizando Visual Studio Code, JavaScript, HTML e CSS pela FreezeMeds.<br>
+            • Armazenamento de informações em um banco de dados MySQL.<br>
+            • Uso do Sistema Operacional Windows com uma Máquina Virtual (VirtualBox) para acesso ao Linux ou outros
+            sistemas operacionais na mesma máquina local (Host).<br>
+            • Participação dedicada de todos os integrantes da FreezeMeds no projeto.<br><br>
+
+            PREMISSAS:<br>
+            • Qualquer problema relacionado ao projeto, deverá ser comunicado a nossa equipe.<br>
+            • A empresa deverá ter uma internet de pelo menos 1GB.<br>
+            • A empresa parceira fornecerá a câmara de resfriamento.<br>
+            • A empresa parceira fornecerá o Arduino.<br>
+            • A empresa parceira irá desenvolver conosco parte do projeto<br><br>
+
+            RESTRIÇÕES:<br>
+            • Não iremos alterar a temperatura da câmara de resfriamento.<br>
+            • O Site Institucional, constituído também pela calculadora ficará disponível somente em desktop.<br>
+            • Não desviaremos do que já foi mostrado no Escopo.<br>
+            • Não iremos conectar mais de 1 sensor a não ser o LM35(temperatura).<br>
+            • Problemas relacionados a tentativa de implementação do sensor, não serão solucionados.<br><br>
+
+
+            REQUISITOS:<br>
+            • Sensor de temperatura (LM-35)<br>
+            • Construção de um website completo, para total segurança dos medicamentos.<br>
+            • Website será realizado utilizando CSS, HTML e JavaScript.<br>
+            • Nosso website, irá conter as devidas informações: Navbar (Sobre Nós, Simulador Financeiro, Contato,<br>
+            Cadastro e Login), que contém botões responsivos e que levam o usuário ao respectivo campo.<br>
+            • Focando em back-end, a FreezeMeds utilizou o JavaScript novamente, por meio do software NodeJs, para deste
+            modo conseguir conectar o Banco de Dados ao website.<br>
+            • Em nosso banco de dados, desenvolvemos diversas tabelas que auxiliam toda equipe da FreezeMeds em manter
+            com total segurança todas as informações de nossos clientes.<br>
+            • Toda nossa equipe também utilizou da ferramenta GitHub para se organizar e manter salvas todas as versões
+            detalhadas de nosso projeto desde o início.<br>
+            • Utilizamos a ferramenta Trello para conseguirmos também se organizar e separar nossas atividades em:
+            ‘Desejável’, ‘Realizado’ e ‘Em Andamento’. Com isso, sabíamos o que estava sendo feito no momento correto.
+            • Nossa marca é representada pela cor azul, a qual remete ao frio, se associando com a temperatura
+            necessária em que mantemos nossos medicamentos.<br>
+            • Nosso website é desenvolvido via desktop e só poderá ser utilizado por esse meio<br>
+
+
+
+        </p>
+
+    </div>

@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+
+}
+
+body {
+    display: flex;
+    background-color: #e3e0e0;
+}
+
+
+
+
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.nav_bar {
+    width: 20%;
+    position: fixed;
+    height: 100vh;
+    background-color: #0f33b5;
+    color: #ffff;
+
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+
+
+}
+
+.menu span {
+    width: 100%;
+    text-align: center;
+}
+
+svg {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.menu li {
+    display: flex;
+    padding: 1rem;
+    width: 70%;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.menu li:hover {
+    background-color: #615d5d65;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+
+}
+
+.sair {
+    display: flex;
+    margin-top: 29vh;
+}
+
+.header {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 95%;
+    height: 80px;
+    padding: 20px 20px 20px 20px;
+    flex-direction: row;
+}
+
+.pai {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 16%;
+    height: 100%;
+}
+
+.card {
+    align-items: row;
+}
+
+.conteudo_header {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.farmacias {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+textarea{
+    width: 50vh;
+    height: 34px;
+    text-align: center;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #d9d9d9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    margin: 3px;
+}
+
+
+.farmacias select {
+    width: 300px;
+    text-align: center;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.metricas {
+    display: flex;
+    width: 80%;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+.metricas li {
+    list-style-type: none;
+    width: 200px;
+    text-align: center;
+    background-color: #e3e0e031;
+    /* border: solid rgba(0, 0, 0, 0.429); */
+    border-radius: 10px;
+}
+
+.card_container {
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    margin-left: 220px;
+    width: 76%;
+    height: 30vh;
+    background-color: #ffffff;
+}
+
+.titulo_card {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.container_cards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+
+}
+
+canvas {
+    width: 100% ;
+    height: 80% ; 
+}
+
+.container_2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.container_cards li {
+    list-style-type: none;
+
+}
+
+.contanercards2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    align-items: center;
+    height: 150px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.card p {
+    width: 100%;
+    text-align: center;
+    margin-left: 1.5vh;
+}
+
+.container_grafico {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-left: 220px; */
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px;
+    width: 70%;
+    height: 400px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.grafico {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.grafico h3 {
+    text-align: center;
+}
+
+.container_grafico p {
+    font-size: 20px;
+
+}
+
+.container_grafico_barras {
+    display: flex;
+    text-align: center;
+    background-color: #ffffff;
+    /* margin-left: 220px; */
+    flex-direction: column;
+    padding: 20px;
+    width: 54%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.container_grafico_barras p {
+    font-size: 20px;
+}
+
+.div-form {
+    display: flex;
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 30px;
+    flex-direction: column;
+    padding: 20px;
+    width: 95%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 10px;
+
+    background-color: #1e04ac;
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.div-form button:hover {
+    background-color: #4CAF50;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.div-form label {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 5px;
+    /* margin-left: 15%; */
+}
+
+.div-form input {
+    border-radius: 2px;
+    border: solid black 1px;
+}
+
+#titulo {
+    width: 90%;
+}
+
+#textarea_descricao {
+    width: 90%;
+    height: 200px;
+}
+
+.postagemmsg {
+    display: flex;
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 30px;
+    flex-direction: column;
+    padding: 20px;
+    width: 95%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
