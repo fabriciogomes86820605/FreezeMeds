@@ -4,8 +4,8 @@ var database = require("../database/config");
 function buscarUltimasMedidas() {
 
     var instrucaoSql = `
-SELECT Dados.temperatura , Dados.registroData FROM Dados 
-JOIN Sensor ON Sensor.idSensor = 1 order by Dados.idDados;`;
+SELECT Dados.temperatura ,  DATE_FORMAT(registroData, '%H:%i:%s') FROM Dados 
+JOIN Sensor ON Sensor.idSensor = 1 order by Dados.idDados DESC LIMIT 7;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

@@ -4,18 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-
-    <link rel="preconnect" href=https://fonts.googleapis.com>
-
-    <link rel="preconnect" href=https://fonts.gstatic.com crossorigin>
-
-    <link href=https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Sora:wght@100..800&display=swap
-        rel="stylesheet">
+    <title>FreezeMeds | Cadastro User</title>
+    <script src="./js/sessao.js"></script>
 </head>
 <link rel="stylesheet" href="./css/StyleCadastro_usuario.css">
 
-<body>
+<body onload="validarSessao()">
     <div class="ContainerMae">
         <div class="ContainerPai">
             <div class="ConteudoCadastro">
@@ -61,7 +55,7 @@
                 </div>
 
                 <p
-                    style="display: flex; justify-content: flex-start; align-items: center; width: 30%; font-size: 20px;">
+                    style="display: flex; justify-content: flex-start; align-items: center; width: 35%; font-size: 20px;">
 
                     Já tem Cadastro? <a style="text-decoration: none;" href="login2.0.html">Faça login</a></p>
                 <button onclick="cadastrar()" class="Btn">Cadastrar</button>
@@ -133,4 +127,3 @@
       return false;
     }
   </script>
->>>>>>>> 36c0813713112e58c

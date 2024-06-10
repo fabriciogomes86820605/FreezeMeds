@@ -18,7 +18,7 @@
     <title>Dashboard</title>
 </head>
 
-<body onload="exibirGraficos()">
+<body onload="exibirGraficos(), validarSessao()">
     <div class="nav_bar">
         <div class="logo"></div>
         <ul class="menu">
@@ -270,166 +270,155 @@
 
 <script>
 
-    function sairSessao() {
-        window.location = 'index.html';
+let MyGrafico; // Declarando MyGrafico aqui para que seja acessível globalmente
+
+function exibirGraficos() {
+    document.getElementById("container").innerHTML += `
+    <div class="grafico">
+        <h3>Dados em tempo real</h3>
+        <canvas  id="myChart"></canvas>
+    </div>`;
+    obterDadoGrafico();
+}
+
+function obterDadoGrafico() {
+    fetch(`/medidas/ultimasMedidas/`, { cache: 'no-store' })
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+function plotarGrafico(resposta) {
+    console.log('iniciando plotagem do gráfico...');
+    let data = []
+    let labels = [];
+    for (let i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        labels.push(registro.registroData);
+        data.push(registro.temperatura)
     }
+    let dados = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            data: data,
+            fill: false,
+            borderColor: '#2d88bc',
+            borderWidth: 2,
+            backgroundColor: '#5da0c7',
+            tension: 0.1
+        }]
+    };
 
-    const limiteMinimo = 0;
-    const limiteMaximo = 7;
+    console.log('Dados recebidos para plotar no gráfico Usuario:', resposta);
+    console.log('Labels:', labels);
+    console.log('Dados do Dataset:', dados.datasets);
 
-    function exibirGraficos() {
-
-        document.getElementById("container").innerHTML += `
-        <div class="grafico">
-            <h3>Dados em tempo real</h3>
-            <canvas  id="myChart"></canvas>
-
-        </div>
-    `
-        obterDadoGrafico();
-
-    }
-
-    function obterDadoGrafico() {
-
-        fetch(`/medidas/ultimasMedidas/`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        resposta.reverse();
-
-                        plotarGrafico(resposta);
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
+    const config = {
+        type: 'line',
+        data: dados,
+        options: {
+            scales: {
+                x: {
+                    ticks: {
+                        maxTicksLimit: 7 // Limita o número de rótulos no eixo x a 7
+                    }
                 }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-
-    chart.toggleDataVisibility(2); // toggles the item in all datasets, at index 2
-    chart.update(); // chart now renders with item hidden
-
-
-    function plotarGrafico(resposta) {
-
-        console.log('iniciando plotagem do gráfico...');
-        let data = []
-        let labels = [];
-        for (let i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.registroData);
-            data.push(registro.temperatura)
+            }
         }
-        let dados = {
-            labels: labels,
-            datasets: [{
-                label: 'Temperatura',
-                data: data,
-                fill: false,
-                borderColor: '#2d88bc',
-                borderWidth: 2,
-                backgroundColor: '#5da0c7',
-                tension: 0.1
-            }]
-        };
+    };
 
-        console.log('Dados recebidos para plotar no gráfico Usuario:', resposta);
+    let ctx = document.getElementById('myChart').getContext('2d');
+    MyGrafico = new Chart(ctx, config); // Atribuindo o objeto Chart a MyGrafico
+    console.log('Gráfico plotado com sucesso!');
 
+    // Chama a função atualizarGrafico após a inicialização do gráfico
+    atualizarGrafico(dados);
+}
 
-        console.log('Labels:', labels);
-        console.log('Dados do Dataset:', dados.datasets);
+function atualizarGrafico(dados) {
+    fetch(`/medidas/tempo-real/`, { cache: 'no-store' }) 
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
 
-        const config = {
-            type: 'line',
-            data: dados,
-        };
+                    // Verificar se há novos dados
+                    if (novoRegistro.length > 0 && novoRegistro[0].registroData !== dados.labels[dados.labels.length - 1]) {
+                        // Adicionar novo registro
+                        dados.labels.push(novoRegistro[0].registroData);
+                        dados.datasets[0].data.push(novoRegistro[0].temperatura);
 
-        let ctx = document.getElementById('myChart').getContext('2d');
-
-        let myChartGrafico = new Chart(ctx, config);
-    }
-
-    setInterval(() => {
-        plotarGrafico(resposta)
-    }, 100)
-
-
-    function atualizarGrafico(idSensor, dados, myChartGrafico) {
-        fetch(`/medidas/tempo-real/${idSensor}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (novoRegistro) {
-                        console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                        console.log(`Dados atuais do gráfico:`);
-                        console.log(dados);
-
-                        // Verificar se há novos dados
-                        if (novoRegistro.length > 0 && novoRegistro[0].registroData !== dados.labels[dados.labels.length - 1]) {
-                            // Adicionar novo registro
-                            dados.labels.push(novoRegistro[0].registroData);
-                            dados.datasets[0].data.push(novoRegistro[0].temperatura);
-
-                            // Remover registro mais antigo se o gráfico tiver mais de 7 pontos
-                            if (dados.labels.length > 7) {
-                                dados.labels.shift();
-                                dados.datasets[0].data.shift();
-                            }
-
-                            myChartGrafico.update();
-
-                        } else {
-                            console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+                        // Remover registro mais antigo se o gráfico tiver mais de 7 pontos
+                        if (dados.labels.length > 7) {
+                            dados.labels.shift();
+                            dados.datasets[0].data.shift();
                         }
 
+                        MyGrafico.update();
+                    } else {
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+                    }
 
-                        setTimeout(() => atualizarGrafico(idSensor, dados, myChartGrafico), 2000);
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                    setTimeout(() => atualizarGrafico(idSensor, dados, myChartGrafico), 2000);
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-
-
-    let atualizacaoKpi;
-
-    function listarKpi() {
-        fetch(`/medidas/listarKpi`, {
-            method: "GET",
-        })
-            .then(function (resposta) {
-                resposta.json().then((resposta) => {
-                    resposta.forEach((medida) => {
-
-                        cardsKpi.innerHTML = `
-                        <li class="card" style="margin-left: 30px;">
-                            <p>Média</p>
-                            <p>${medida.media}°C</p>
-                        </li>
-
-                        <li class="card" style="margin-left: 30px;">
-                            <p>Temperatura</p>
-                            <p>${medida.temperatura}°C</p>
-                        </li>
-                        `
-
-                    });
-
-                    atualizacaoKpi = setTimeout(() => listarKpi(), 500);
+                    // Chama a função recursivamente após 5 segundos
+                    setTimeout(() => atualizarGrafico(dados), 5000);
                 });
-            })
-            .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
-    }
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Chama a função recursivamente após 5 segundos
+                setTimeout(() => atualizarGrafico(dados), 5000);
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            // Chama a função recursivamente após 5 segundos
+            setTimeout(() => atualizarGrafico(dados), 5000);
+        });
+}
 
-    listarKpi()
+function listarKpi() {
+    fetch(`/medidas/listarKpi`, {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((resposta) => {
+                resposta.forEach((medida) => {
+
+                    cardsKpi.innerHTML = `
+                    <li class="card" style="margin-left: 30px;">
+                        <p>Média</p>
+                        <p>${medida.media}°C</p>
+                    </li>
+                    
+                    <li class="card" style="margin-left: 30px;">
+                        <p>Temperatura</p>
+                        <p>${medida.temperatura}°C</p>
+                    </li>
+                    `
+
+                });
+
+                atualizacaoKpi = setTimeout(() => listarKpi(), 500);
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+listarKpi(); // Chama listarKpi diretamente após a definição da função
+
 </script>
