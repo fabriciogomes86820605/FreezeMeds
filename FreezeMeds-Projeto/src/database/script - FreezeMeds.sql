@@ -24,6 +24,8 @@ constraint fkMarcaUsuario foreign key (fkMarca)
 references Marca (idMarcaRemedio)
 );
 
+select * from usuario ;
+
 create table Manutencao (
 
 idManutencao int primary key auto_increment,
@@ -49,6 +51,13 @@ constraint ChaveCompostaDados primary key (idDados, fkSensor),
 constraint fkDadosSensor foreign key (fkSensor)
 references Sensor (idSensor)
 );
+
+create table aviso (
+id int auto_increment primary key,
+titulo varchar (100),
+descricao varchar (520),
+fk_usuario int,
+foreign key (fk_usuario) references usuario(idUsuario));
 
 
 
