@@ -88,6 +88,55 @@
         alert(`Preencha todos os campos para continuar com o cadastro!`);
         return false;
       }
+
+      var senha_text = senhaVar.length;
+
+    var indice_arroba = emailVar.indexOf('@');
+
+    var indice_com = emailVar.indexOf('.com')
+
+
+    if (indice_arroba < 0) {
+      alert('Não possui @ nessa frase!');
+      return false;
+    }
+
+    if (indice_com < 0) {
+      alert('Não possui .com nessa frase!');
+      return false;
+    }
+
+    if (senha_text < 7) {
+      alert('Coloque o valor mínimo de 7 caracteres!');
+      return false;
+    }
+
+    if (cnpjVar < 0 || cpfVar > 11) {
+      alert('Coloque o valor correto!');
+      return false;
+    }
+
+    if (cpfVar < 0 || cpfVar > 11) {
+      alert('Coloque o valor correto!');
+      return false;
+    }
+
+    if (tel1Var < 0 || tel1Var > 14) {
+      alert('Coloque o valor correto!');
+      return false;
+    }
+
+    if (tel2Var < 0 || tel2Var > 14) {
+      alert('Coloque o valor correto!');
+      return false;
+    }
+
+    if (confirmacaoSenhaVar != senhaVar) {
+      alert('Confirmar senha diferente de senha!');
+      return false;
+    }
+
+
   
       fetch("/usuarios/cadastrar", {
         method: "POST",

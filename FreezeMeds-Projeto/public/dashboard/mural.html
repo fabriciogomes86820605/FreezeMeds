@@ -220,6 +220,15 @@
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
         var nome = sessionStorage.NOME_USUARIO;
+        var text_limit = textarea_descricao.value;
+
+        var qtd_text = text_limit.length;
+        
+        if (qtd_text < 0 || qtd_text > 250){
+            alert('Número de caracteres fora do limite');
+            return false;
+        }
+
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
