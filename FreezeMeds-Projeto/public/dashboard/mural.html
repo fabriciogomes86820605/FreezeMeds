@@ -12,7 +12,7 @@
     <script src="./../js/alerta.js"></script>
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
+<body onload=" atualizarFeed()">
 
     <div class="nav_bar">
         <div class="logo"></div>
@@ -22,7 +22,7 @@
                 Olá
                 <span id="b_usuario"></span>
             </div>
-        
+
 
 
             <li>
@@ -71,8 +71,55 @@
             <li>
 
                 <a href="./mural.html">
-                    <svg viewBox="0 0 30 30" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><style type="text/css"> .st0{fill:#FD6A7E;} .st1{fill:#17B978;} .st2{fill:#8797EE;} .st3{fill:#41A6F9;} .st4{fill:#37E0FF;} .st5{fill:#2FD9B9;} .st6{fill:#F498BD;} .st7{fill:#FFDF1D;} .st8{fill:#C6C9CC;} </style><path class="st8" d="M6,9.3L3.9,5.8l1.4-1.4l3.5,2.1v1.4l3.6,3.6c0,0.1,0,0.2,0,0.3L11.1,13L7.4,9.3H6z M21,17.8c-0.3,0-0.5,0-0.8,0 c0,0,0,0,0,0c-0.7,0-1.3-0.1-1.9-0.2l-2.1,2.4l4.7,5.3c1.1,1.2,3,1.3,4.1,0.1c1.2-1.2,1.1-3-0.1-4.1L21,17.8z M24.4,14 c1.6-1.6,2.1-4,1.5-6.1c-0.1-0.4-0.6-0.5-0.8-0.2l-3.5,3.5l-2.8-2.8l3.5-3.5c0.3-0.3,0.2-0.7-0.2-0.8C20,3.4,17.6,3.9,16,5.6 c-1.8,1.8-2.2,4.6-1.2,6.8l-10,8.9c-1.2,1.1-1.3,3-0.1,4.1l0,0c1.2,1.2,3,1.1,4.1-0.1l8.9-10C19.9,16.3,22.6,15.9,24.4,14z"></path></g></svg>
-                    Manutenção</a>
+                    <svg viewBox="0 0 30 30" id="Layer_1" version="1.1" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff"
+                        stroke="#ffffff">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #FD6A7E;
+                                }
+
+                                .st1 {
+                                    fill: #17B978;
+                                }
+
+                                .st2 {
+                                    fill: #8797EE;
+                                }
+
+                                .st3 {
+                                    fill: #41A6F9;
+                                }
+
+                                .st4 {
+                                    fill: #37E0FF;
+                                }
+
+                                .st5 {
+                                    fill: #2FD9B9;
+                                }
+
+                                .st6 {
+                                    fill: #F498BD;
+                                }
+
+                                .st7 {
+                                    fill: #FFDF1D;
+                                }
+
+                                .st8 {
+                                    fill: #C6C9CC;
+                                }
+                            </style>
+                            <path class="st8"
+                                d="M6,9.3L3.9,5.8l1.4-1.4l3.5,2.1v1.4l3.6,3.6c0,0.1,0,0.2,0,0.3L11.1,13L7.4,9.3H6z M21,17.8c-0.3,0-0.5,0-0.8,0 c0,0,0,0,0,0c-0.7,0-1.3-0.1-1.9-0.2l-2.1,2.4l4.7,5.3c1.1,1.2,3,1.3,4.1,0.1c1.2-1.2,1.1-3-0.1-4.1L21,17.8z M24.4,14 c1.6-1.6,2.1-4,1.5-6.1c-0.1-0.4-0.6-0.5-0.8-0.2l-3.5,3.5l-2.8-2.8l3.5-3.5c0.3-0.3,0.2-0.7-0.2-0.8C20,3.4,17.6,3.9,16,5.6 c-1.8,1.8-2.2,4.6-1.2,6.8l-10,8.9c-1.2,1.1-1.3,3-0.1,4.1l0,0c1.2,1.2,3,1.1,4.1-0.1l8.9-10C19.9,16.3,22.6,15.9,24.4,14z">
+                            </path>
+                        </g>
+                    </svg>
+                    <a> Manutenção </a>
             </li>
 
             <li>
@@ -155,62 +202,53 @@
         </ul>
 
 
-     </div>
+    </div>
 
-     <div class="pai">
-             <div class="suporte"> 
+    <div class="pai">
+        <div class="suporte">
             <div class="avisos">
                 <div id="alerta">
-                </div>       
+                </div>
                 <div class="header-manutenção">
                     <div style="display: flex;flex-direction: column;">
-                            <h3>Suporte Técnico</h3>
-                     <i>Conte cosnosco para resolver seu problema</i>
+                        <h3>Suporte Técnico</h3>
+                        <i>Conte cosnosco para resolver seu problema</i>
                     </div>
-                 
+
                 </div>
-                   
+
                 <div class="container">
-             
+
                     <div class="div-form">
                         <h2>Informe seu problema abaixo:</h2>
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                           
+
                                 <br>
                                 <input placeholder="Resumo:" name="titulo" id="titulo" maxlength="100" type="text">
                             </label>
-                            
-                            
+
+
                             <label id="desc">
-                                <textarea placeholder="Descrição (máximo de 250 caracteres):" name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea placeholder="Descrição (máximo de 250 caracteres):" name="descricao"
+                                    id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
-                       
+
                             <button>Enviar</button>
                         </form>
                     </div>
-                    </div>
-                    <div class="postagemmsg">
-                </h2>   <p>Chamados: </p>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                      </div>
-                    </div>
                 </div>
+               
             </div>
         </div>
-
-
-
-
+    </div>
 
 </body>
 
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
@@ -225,7 +263,7 @@
             descricao: form_postagem.descricao.value
         }
 
-        fetch(`/avisos/publicar/${idUsuario}`,{
+        fetch(`/avisos/publicar/${idUsuario}`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -252,110 +290,6 @@
 
         return false;
 
-    }
-
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
-
-    }
-
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function (resposta) {
-
-            if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    }
-
-    function atualizarFeed() {
-        fetch("/avisos/listar").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    var feed = document.getElementById("feed_container");
-                    var mensagem = document.createElement("span");
-                    mensagem.innerHTML = "Nenhum resultado encontrado."
-                    feed.appendChild(mensagem);
-                    throw "Nenhum resultado encontrado!!";
-                }
-
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                    var feed = document.getElementById("feed_container");
-                    feed.innerHTML = "";
-                    for (let i = 0; i < resposta.length; i++) {
-                        var publicacao = resposta[i];
-
-                        // criando e manipulando elementos do HTML via JavaScript
-                        var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
-                        var spanNome = document.createElement("span");
-                        var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        // var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
-
-
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + sessionStorage.NOME_USUARIO + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        // btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
-
-                        divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
-                        divDescricao.className = "publicacao-descricao";
-
-                        divButtons.className = "div-buttons"
-
-                        // btnEditar.className = "publicacao-btn-editar"
-                        // // btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        // btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
-
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        // divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
-                        feed.appendChild(divPublicacao);
-                    }
-
-                    // finalizarAguardar();
-                });
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            // finalizarAguardar();
-        });
     }
 
 </script>
