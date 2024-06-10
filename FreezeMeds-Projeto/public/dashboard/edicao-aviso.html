@@ -6,9 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Página Inicial</title>
-
-    
+    <title>Edição</title>
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" >
     <link rel="stylesheet" href="../css/styledash.css">
@@ -153,6 +151,42 @@
             </ul>
     
     
+        </div>
+        <div class="dash-right">
+
+            <div class="avisos">
+                <div class="container">
+                    <h1>Editar um aviso</h1>
+                    <div class="div-form">
+                        <label>
+                          
+                            <br>
+                            <input placeholder="  ID:" id="input_id" maxlength="100" type="text" style="color: rgb(196, 196, 196)" disabled>
+                        </label>
+                        <label>
+                          
+                            <br>
+                            <input placeholder="  Autor:" id="input_nome" maxlength="100" type="text" style="color: rgb(196, 196, 196)"
+                                disabled>
+                        </label>
+                        <label>
+                           
+                            <br>
+                            <input placeholder=" Título:" id="input_titulo" maxlength="100" type="text" style="color: rgb(196, 196, 196)"
+                                disabled>
+                        </label>
+                        <br>
+                        <label>
+                           
+                            <br>
+                            <textarea placeholder=" Descrição (máximo de 250 caracteres):" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                        </label>
+                        <br>
+                        <button onclick="editar()">Editar</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
 </body>
 
