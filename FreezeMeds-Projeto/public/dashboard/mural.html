@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 
     <title>Manutenção</title>
 
@@ -14,6 +15,9 @@
     <!-- <link rel="stylesheet" href="./../css/dashboards.css"> -->
     <!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
 
+=======
+    <title>Manutenção</title>
+>>>>>>> a3ae821071cc7e8e47d3fb7eeabcfadf7ce4f11a
     <link rel="stylesheet" href="../css/styledash.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -149,6 +153,15 @@
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
         var nome = sessionStorage.NOME_USUARIO;
+        var text_limit = textarea_descricao.value;
+
+        var qtd_text = text_limit.length;
+        
+        if (qtd_text < 0 || qtd_text > 250){
+            alert('Número de caracteres fora do limite');
+            return false;
+        }
+
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value

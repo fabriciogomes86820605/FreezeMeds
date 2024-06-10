@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,86 +11,111 @@
     <link rel="preconnect" href=https://fonts.gstatic.com crossorigin>
 
     <link href=https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Sora:wght@100..800&display=swap
-
         rel="stylesheet">
 </head>
 <link rel="stylesheet" href="./css/StyleLogin.css">
-<body>
-<div class="ContainerMae">
-    <div class="ContainerPai">
-        <div class="ConteudoCadastro">
-            <h1>Login</h1>
 
-            <div class="InputsCadastro">
-                <p style="display: flex; justify-content: flex-start; align-items: center;
+<body>
+    <div class="ContainerMae">
+        <div class="ContainerPai">
+            <div class="ConteudoCadastro">
+                <h1>Login</h1>
+
+                <div class="InputsCadastro">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Email</p>
-                <input id="input_email" class="input" type="text">
-                <p style="display: flex; justify-content: flex-start; align-items: center;
+                    <input id="input_email" class="input" type="text">
+                    <p style="display: flex; justify-content: flex-start; align-items: center;
                 width: 90%;">Senha</p>
-                <input id="input_senha" class="input" type="text">
-                
-            <p style="display: flex; justify-content: flex-start; align-items: center; width: 63%; height: 35px; font-size: 20px;">Não tem conta? <a style="text-decoration: none; " href="cadastro2.0.html" >Faça seu cadastro!</a></p>
-            <button onclick="entrar()" class="Btn">Fazer Login</button>
+                    <input id="input_senha" class="input" type="text">
+
+                    <p
+                        style="display: flex; justify-content: flex-start; align-items: center; width: 63%; height: 35px; font-size: 20px;">
+                        Não tem conta? <a style="text-decoration: none; " href="cadastro2.0.html">Faça seu cadastro!</a>
+                    </p>
+                    <button onclick="entrar()" class="Btn">Fazer Login</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 </body>
+
 </html>
 <script>
     function entrar() {
 
-var emailVar = input_email.value;
-var senhaVar = input_senha.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
 
-if (emailVar == "" || senhaVar == "") {
-   alert(`Preencha todos os campos para continuar`)
-    return false;
-}
+        if (emailVar == "" || senhaVar == "") {
+            alert(`Preencha todos os campos para continuar`)
+            return false;
+        }
 
-console.log("FORM LOGIN: ", emailVar);
-console.log("FORM SENHA: ", senhaVar);
+        var senha_text = senhaVar.length;
 
-fetch("/usuarios/autenticar", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        emailServer: emailVar,
-        senhaServer: senhaVar
-    })
-}).then(function (resposta) {
-    console.log("ESTOU NO THEN DO entrar()!")
+        var indice_arroba = emailVar.indexOf('@');
 
-    if (resposta.ok) {
-        console.log(resposta);
+        var indice_com = emailVar.indexOf('.com')
 
-        resposta.json().then(json => {
-            console.log("json: "+json);
-            console.log(JSON.stringify(json));
-            sessionStorage.EMAIL_USUARIO = json[0].emailUsuario;
-            sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
-            sessionStorage.ID_USUARIO = json[0].idUsuario;
+        if (indice_arroba < 0) {
+            alert('Não possui @ nessa frase!');
+            return false;
+        }
 
-            setTimeout(function () {
-                window.location = "./dashboard/dashboard.html";
-            }, 1000); // apenas para exibir o loading
+        if (indice_com < 0) {
+            alert('Não possui .com nessa frase!');
+            return false;
+        }
 
-        });
+        if (senha_text < 7) {
+            alert('Coloque o valor mínimo de 7 caracteres!');
+            return false;
+        }
 
-    } else {
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
 
-        console.log("Houve um erro ao tentar realizar o login!");
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
 
-        resposta.text().then(texto => {
-            console.error(texto);
-        });
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log("json: " + json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json[0].emailUsuario;
+                    sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
+                    sessionStorage.ID_USUARIO = json[0].idUsuario;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
-
-}).catch(function (erro) {
-    console.log(erro);
-})
-
-return false;
-}
 </script>
