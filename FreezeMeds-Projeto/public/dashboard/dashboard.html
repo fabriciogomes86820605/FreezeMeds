@@ -275,7 +275,10 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;
-    window.onload = exibirGraficos();
+    window.onload = function () {
+        exibirGraficos();
+        listarKpi();
+    }
 
 
     let MyGrafico; // Declarando MyGrafico aqui para que seja acessível globalmente
@@ -426,17 +429,4 @@
             });
     }
 
-    listarKpi(); // Chama listarKpi diretamente após a definição da função
-
-    fetch(`/medidas/tempo-real`, { cache: 'no-store' }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (novoRegistro) {
-
-                obterdados(idUsuario);
-
-                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                console.log(`Dados atuais do gráfico:`);
-                console.log(dados);
-
-                let avisoCaptura = document.getElementById(`avisoCaptura${idAquario}`)
-                avisoCaptura.innerHTML = ""
+</script>
